@@ -134,13 +134,16 @@ function App() {
             </div>
           </div>
 
-          {/* Hero enquiry form — transparent on mobile so video stays visible */}
+          {/* Hero enquiry form — bounded glass section */}
           <form
             id="hero-enquiry"
-            className="hero-enquiry w-full max-w-4xl mt-6 sm:mt-10"
+            className="hero-enquiry w-full max-w-4xl mt-8 sm:mt-10"
             onSubmit={(e) => e.preventDefault()}
           >
-            <p className="hero-enquiry-title text-sm font-semibold mb-4 text-center sm:text-left">Quick Trip Enquiry</p>
+            <div className="hero-enquiry-heading">
+              <p className="hero-enquiry-title">Quick Trip Enquiry</p>
+              <p className="hero-enquiry-sub">Share your trip details — we&apos;ll plan the rest</p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div>
                 <label className="label-field">Destination</label>
