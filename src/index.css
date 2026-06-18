@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.brand-logo--stack {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.05;
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.brand-logo--stack .brand-travels {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #4b5b47;
+}
+
+.brand-logo--stack .brand-mantra {
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1f2a1d;
+  letter-spacing: -0.02em;
+}
+
+.brand-logo--stack .brand-mantra em {
+  font-style: normal;
+  color: #336443;
+}
+
+@media (min-width: 640px) {
+  .brand-logo--stack .brand-travels { font-size: 0.6875rem; }
+  .brand-logo--stack .brand-mantra { font-size: 1.625rem; }
+}
+
+.brand-logo--on-dark .brand-travels { color: rgba(255, 255, 255, 0.55); }
+.brand-logo--on-dark .brand-mantra { color: #fff; }
+.brand-logo--on-dark .brand-mantra em { color: #85AB8B; }
+
+/* Hero video — fill section, no offset crop on mobile */
+.hero-video-wrap {
+  isolation: isolate;
+}
+
+.hero-video-media {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Bottom fade merges hero video into the page content on scroll */
+.hero-scroll-fade {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(31, 42, 29, 0.15) 25%,
+    rgba(250, 250, 250, 0.55) 62%,
+    #fafafa 100%
+  );
+}
