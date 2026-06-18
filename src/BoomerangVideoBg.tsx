@@ -4,8 +4,7 @@ type Props = {
   poster?: string;
 };
 
-const FALLBACK_POSTER =
-  'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=80';
+const FALLBACK_POSTER = '/images/hero-poster.webp';
 
 /** Lightweight hero background — loops video immediately with a poster fallback. */
 export default function BoomerangVideoBg({ src, className, poster = FALLBACK_POSTER }: Props) {
