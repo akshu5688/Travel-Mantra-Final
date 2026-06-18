@@ -40,6 +40,13 @@ body,
   letter-spacing: -0.02em;
 }
 
+@media (max-width: 639px) {
+  .text-hero {
+    font-size: clamp(1.625rem, 6.5vw, 2rem);
+    line-height: 1.2;
+  }
+}
+
 .text-section-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
@@ -131,6 +138,38 @@ body,
 
   .hero-input-field::placeholder {
     color: #6b7280;
+  }
+
+  @media (max-width: 639px) {
+    .hero-enquiry {
+      @apply p-2.5 rounded-xl;
+      outline-offset: 2px;
+      border-width: 1.5px;
+    }
+
+    .hero-enquiry-heading {
+      @apply mb-2 pb-2;
+    }
+
+    .hero-enquiry-title {
+      @apply text-sm;
+    }
+
+    .hero-enquiry-sub {
+      display: none;
+    }
+
+    .hero-enquiry .label-field {
+      @apply text-[9px] mb-0.5 tracking-wide;
+    }
+
+    .hero-enquiry .hero-input-field {
+      @apply py-1.5 px-2 text-xs rounded-lg min-h-0;
+    }
+
+    .hero-enquiry-submit {
+      @apply py-2 text-sm rounded-lg;
+    }
   }
 }
 

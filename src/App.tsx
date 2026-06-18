@@ -120,32 +120,32 @@ function App() {
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/55 via-[#1f2a1d]/20 to-[#1f2a1d]/35 sm:to-[#1f2a1d]/70 pointer-events-none" />
         <div className="hero-scroll-fade absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-40 pointer-events-none" aria-hidden="true" />
 
-        <div className="relative z-10 flex-1 flex flex-col items-center px-4 sm:px-6 pt-24 sm:pt-28 pb-8 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 flex-1 flex flex-col items-center px-3 sm:px-6 pt-20 sm:pt-28 pb-4 sm:pb-8 max-w-7xl mx-auto w-full">
           <div className="text-center w-full max-w-3xl">
             <h1 className="text-hero font-semibold text-white drop-shadow-lg">
               Plan Your Dream Holiday with Travels Mantra
             </h1>
-            <p className="text-body text-white/90 mt-4 sm:mt-5 max-w-2xl mx-auto drop-shadow-md">
+            <p className="text-body text-white/90 mt-3 sm:mt-5 max-w-2xl mx-auto drop-shadow-md line-clamp-3 sm:line-clamp-none">
               Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8 justify-center w-full sm:w-auto">
-              <a href="#tours" className="btn-secondary w-full sm:w-auto">Explore Packages</a>
-              <a href="#contact" className="btn-primary w-full sm:w-auto !bg-white !text-[#1f2a1d] hover:!bg-white/90">Get Free Trip Plan</a>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4 sm:mt-8 justify-center w-full sm:w-auto">
+              <a href="#tours" className="btn-secondary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base">Explore Packages</a>
+              <a href="#contact" className="btn-primary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base !bg-white !text-[#1f2a1d] hover:!bg-white/90">Get Free Trip Plan</a>
             </div>
           </div>
 
           {/* Hero enquiry form — bordered frame, transparent over video */}
           <form
             id="hero-enquiry"
-            className="hero-enquiry w-full max-w-4xl mt-8 sm:mt-10"
+            className="hero-enquiry w-full max-w-4xl mt-4 sm:mt-10"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="hero-enquiry-heading">
               <p className="hero-enquiry-title">Quick Trip Enquiry</p>
               <p className="hero-enquiry-sub">Share your trip details — we&apos;ll plan the rest</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              <div>
+            <div className="hero-enquiry-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+              <div className="col-span-2 lg:col-span-1">
                 <label className="label-field">Destination</label>
                 <select className="input-field hero-input-field" defaultValue="">
                   <option value="" disabled>Select destination</option>
@@ -156,31 +156,29 @@ function App() {
               </div>
               <div>
                 <label className="label-field">Departure From</label>
-                <input className="input-field hero-input-field" placeholder="e.g. Delhi, Mumbai" type="text" />
+                <input className="input-field hero-input-field" placeholder="Delhi, Mumbai" type="text" />
               </div>
               <div>
                 <label className="label-field">Travel Date</label>
                 <input className="input-field hero-input-field" type="date" />
               </div>
-              <div className="grid grid-cols-2 gap-3 sm:col-span-2 lg:col-span-1">
-                <div>
-                  <label className="label-field">Adults</label>
-                  <select className="input-field hero-input-field" defaultValue="2">
-                    {[1, 2, 3, 4, 5, 6].map((n) => (
-                      <option key={n} value={n}>{n}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="label-field">Children</label>
-                  <select className="input-field hero-input-field" defaultValue="0">
-                    {[0, 1, 2, 3, 4].map((n) => (
-                      <option key={n} value={n}>{n}</option>
-                    ))}
-                  </select>
-                </div>
+              <div>
+                <label className="label-field">Adults</label>
+                <select className="input-field hero-input-field" defaultValue="2">
+                  {[1, 2, 3, 4, 5, 6].map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
               </div>
               <div>
+                <label className="label-field">Children</label>
+                <select className="input-field hero-input-field" defaultValue="0">
+                  {[0, 1, 2, 3, 4].map((n) => (
+                    <option key={n} value={n}>{n}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-span-2 sm:col-span-1">
                 <label className="label-field">Budget</label>
                 <select className="input-field hero-input-field" defaultValue="">
                   <option value="" disabled>Select budget</option>
@@ -189,12 +187,12 @@ function App() {
                   ))}
                 </select>
               </div>
-              <div>
+              <div className="col-span-2 sm:col-span-1">
                 <label className="label-field">Phone Number</label>
                 <input className="input-field hero-input-field" placeholder="+91 98765 43210" type="tel" required />
               </div>
-              <div className="sm:col-span-2 lg:col-span-2 flex items-end">
-                <button type="submit" className="btn-primary w-full shadow-lg">Send Enquiry</button>
+              <div className="col-span-2 sm:col-span-2 lg:col-span-2 flex items-end">
+                <button type="submit" className="btn-primary hero-enquiry-submit w-full">Send Enquiry</button>
               </div>
             </div>
           </form>
