@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { List, X, CaretDown } from '@phosphor-icons/react';
 import BoomerangVideoBg from './BoomerangVideoBg';
 import ContentSections from './ContentSections';
 import Chatbot from './components/Chatbot';
@@ -75,8 +75,8 @@ function App() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
           >
-            <Menu className={`w-5 h-5 absolute transition-all duration-300 ${menuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100'}`} />
-            <X className={`w-5 h-5 absolute transition-all duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 -rotate-90 scale-50'}`} />
+            <List size={20} weight="bold" className={`absolute transition-all duration-300 ${menuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100'}`} />
+            <X size={20} weight="bold" className={`absolute transition-all duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 -rotate-90 scale-50'}`} />
           </button>
         </div>
       </nav>
@@ -117,7 +117,7 @@ function App() {
       {/* Hero */}
       <section className="relative w-full min-h-[100dvh] overflow-hidden bg-[#1f2a1d] flex flex-col">
         <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 h-full w-full" poster="/images/hero-poster.webp" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/55 via-[#1f2a1d]/25 to-[#1f2a1d]/70 pointer-events-none" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/55 via-[#1f2a1d]/20 to-[#1f2a1d]/35 sm:to-[#1f2a1d]/70 pointer-events-none" />
         <div className="hero-scroll-fade absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-40 pointer-events-none" aria-hidden="true" />
 
         <div className="relative z-10 flex-1 flex flex-col items-center px-4 sm:px-6 pt-24 sm:pt-28 pb-8 max-w-7xl mx-auto w-full">
@@ -134,17 +134,17 @@ function App() {
             </div>
           </div>
 
-          {/* Hero enquiry form */}
+          {/* Hero enquiry form — transparent on mobile so video stays visible */}
           <form
             id="hero-enquiry"
-            className="w-full max-w-4xl mt-8 sm:mt-10 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-xl border border-white/60"
+            className="hero-enquiry w-full max-w-4xl mt-6 sm:mt-10"
             onSubmit={(e) => e.preventDefault()}
           >
-            <p className="text-sm font-semibold text-[#1f2a1d] mb-4 text-center sm:text-left">Quick Trip Enquiry</p>
+            <p className="hero-enquiry-title text-sm font-semibold mb-4 text-center sm:text-left">Quick Trip Enquiry</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <div>
                 <label className="label-field">Destination</label>
-                <select className="input-field" defaultValue="">
+                <select className="input-field hero-input-field" defaultValue="">
                   <option value="" disabled>Select destination</option>
                   {enquiryDestinations.map((d) => (
                     <option key={d} value={d}>{d}</option>
@@ -153,16 +153,16 @@ function App() {
               </div>
               <div>
                 <label className="label-field">Departure From</label>
-                <input className="input-field" placeholder="e.g. Delhi, Mumbai" type="text" />
+                <input className="input-field hero-input-field" placeholder="e.g. Delhi, Mumbai" type="text" />
               </div>
               <div>
                 <label className="label-field">Travel Date</label>
-                <input className="input-field" type="date" />
+                <input className="input-field hero-input-field" type="date" />
               </div>
               <div className="grid grid-cols-2 gap-3 sm:col-span-2 lg:col-span-1">
                 <div>
                   <label className="label-field">Adults</label>
-                  <select className="input-field" defaultValue="2">
+                  <select className="input-field hero-input-field" defaultValue="2">
                     {[1, 2, 3, 4, 5, 6].map((n) => (
                       <option key={n} value={n}>{n}</option>
                     ))}
@@ -170,7 +170,7 @@ function App() {
                 </div>
                 <div>
                   <label className="label-field">Children</label>
-                  <select className="input-field" defaultValue="0">
+                  <select className="input-field hero-input-field" defaultValue="0">
                     {[0, 1, 2, 3, 4].map((n) => (
                       <option key={n} value={n}>{n}</option>
                     ))}
@@ -179,7 +179,7 @@ function App() {
               </div>
               <div>
                 <label className="label-field">Budget</label>
-                <select className="input-field" defaultValue="">
+                <select className="input-field hero-input-field" defaultValue="">
                   <option value="" disabled>Select budget</option>
                   {budgetOptions.map((b) => (
                     <option key={b} value={b}>{b}</option>
@@ -188,10 +188,10 @@ function App() {
               </div>
               <div>
                 <label className="label-field">Phone Number</label>
-                <input className="input-field" placeholder="+91 98765 43210" type="tel" required />
+                <input className="input-field hero-input-field" placeholder="+91 98765 43210" type="tel" required />
               </div>
               <div className="sm:col-span-2 lg:col-span-2 flex items-end">
-                <button type="submit" className="btn-primary w-full">Send Enquiry</button>
+                <button type="submit" className="btn-primary w-full shadow-lg">Send Enquiry</button>
               </div>
             </div>
           </form>
@@ -203,7 +203,7 @@ function App() {
           aria-label="Scroll down"
         >
           <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
+          <CaretDown size={20} weight="bold" className="animate-bounce" />
         </a>
       </section>
 

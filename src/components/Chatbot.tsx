@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Mic, MicOff, Send } from 'lucide-react';
+import { ChatsCircle, X, Microphone, MicrophoneSlash, PaperPlaneTilt } from '@phosphor-icons/react';
 import { chatbotChips } from '../data/content';
 
 type Message = { role: 'bot' | 'user'; text: string };
@@ -70,12 +70,15 @@ export default function Chatbot() {
       {open && (
         <div className="w-[calc(100vw-2rem)] max-w-[340px] bg-white rounded-2xl shadow-2xl border border-[#E5E5E5] overflow-hidden flex flex-col max-h-[min(70vh,520px)]">
           <div className="bg-[#1f2a1d] text-white px-4 py-3 flex items-center justify-between shrink-0">
-            <div>
-              <p className="font-semibold text-sm">Travels Mantra Assistant</p>
-              <p className="text-[10px] text-white/60">Tour recommendations</p>
+            <div className="flex items-center gap-2.5">
+              <ChatsCircle size={28} weight="duotone" className="text-[#85AB8B] shrink-0" />
+              <div>
+                <p className="font-semibold text-sm">Travels Mantra Assistant</p>
+                <p className="text-[10px] text-white/60">Tour recommendations</p>
+              </div>
             </div>
             <button onClick={() => setOpen(false)} className="p-1.5 rounded-full hover:bg-white/10 transition-colors" aria-label="Close chat">
-              <X className="w-4 h-4" />
+              <X size={18} weight="bold" />
             </button>
           </div>
 
@@ -127,10 +130,14 @@ export default function Chatbot() {
               aria-label={voiceState === 'listening' ? 'Listening' : 'Tap to speak'}
               title={voiceState === 'listening' ? 'Listening...' : 'Tap to speak'}
             >
-              {voiceState === 'listening' ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+              {voiceState === 'listening' ? (
+                <MicrophoneSlash size={18} weight="fill" />
+              ) : (
+                <Microphone size={18} weight="duotone" />
+              )}
             </button>
             <button onClick={handleSend} className="shrink-0 w-9 h-9 rounded-full bg-[#1f2a1d] text-white flex items-center justify-center hover:bg-[#2a3827] transition-colors" aria-label="Send">
-              <Send className="w-4 h-4" />
+              <PaperPlaneTilt size={18} weight="fill" />
             </button>
           </div>
           {voiceState === 'idle' && (
@@ -144,7 +151,7 @@ export default function Chatbot() {
         className="w-14 h-14 rounded-full bg-[#336443] hover:bg-[#2a5235] text-white shadow-lg flex items-center justify-center transition-all hover:scale-105"
         aria-label={open ? 'Close Travels Mantra Assistant' : 'Open Travels Mantra Assistant'}
       >
-        {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        {open ? <X size={26} weight="bold" /> : <ChatsCircle size={28} weight="duotone" />}
       </button>
     </div>
   );

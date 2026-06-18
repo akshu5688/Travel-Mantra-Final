@@ -1,19 +1,19 @@
 import {
-  BadgeCheck,
-  Zap,
-  MapPinned,
-  FileText,
-  Shield,
-  Wrench,
-  BookOpen,
-  ClipboardList,
-  FilePen,
-  HeartPulse,
-  Globe,
+  SealCheck,
+  Timer,
+  MapTrifold,
+  Stamp,
+  ShieldCheck,
+  SlidersHorizontal,
+  BookOpenText,
+  ClipboardText,
+  PenNib,
+  Heartbeat,
+  GlobeHemisphereEast,
   Phone,
-  Mail,
-  Luggage,
-} from 'lucide-react';
+  EnvelopeSimple,
+  SuitcaseRolling,
+} from '@phosphor-icons/react';
 import PackageCard from './components/PackageCard';
 import {
   trustCards,
@@ -21,14 +21,13 @@ import {
   destinationCategories,
   excursions,
   visaServices,
-  insuranceFeatures,
   testimonials,
   blogPosts,
   enquiryDestinations,
   budgetOptions,
 } from './data/content';
 
-const trustIcons = [BadgeCheck, Zap, MapPinned, FileText, Shield, Wrench];
+const trustIcons = [SealCheck, Timer, MapTrifold, Stamp, ShieldCheck, SlidersHorizontal];
 
 function SectionHeader({ label, title, subtitle }: { label: string; title: string; subtitle?: string }) {
   return (
@@ -52,7 +51,7 @@ export default function ContentSections() {
               const Icon = trustIcons[i];
               return (
                 <div key={card.title} className="card-equal flex gap-4 p-5 rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#85AB8B]/40 transition-colors">
-                  <Icon className="w-8 h-8 text-[#336443] shrink-0 mt-0.5" />
+                  <Icon size={32} weight="duotone" className="text-[#336443] shrink-0 mt-0.5" />
                   <div>
                     <h3 className="text-card-title font-semibold text-[#1f2a1d]">{card.title}</h3>
                     <p className="text-sm text-[#4b5b47] mt-1 leading-relaxed">{card.desc}</p>
@@ -192,11 +191,11 @@ export default function ContentSections() {
             <SectionHeader label="Visa Assistance" title="Visa help made effortless" subtitle="From document checklist to embassy follow-up — we handle it all." />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {visaServices.map(({ title, desc }, i) => {
-                const icons = [BookOpen, ClipboardList, FilePen, HeartPulse, Globe];
+                const icons = [BookOpenText, ClipboardText, PenNib, Heartbeat, GlobeHemisphereEast];
                 const Icon = icons[i];
                 return (
                   <div key={title} className="card-equal p-5 sm:p-6 text-center rounded-xl bg-white border border-[#E5E5E5] hover:border-[#85AB8B]/50 transition-colors">
-                    <Icon className="w-8 h-8 text-[#336443] mx-auto mb-3" />
+                    <Icon size={32} weight="duotone" className="text-[#336443] mx-auto mb-3" />
                     <h3 className="text-card-title font-semibold text-[#1f2a1d] mb-2">{title}</h3>
                     <p className="text-sm text-[#4b5b47] leading-relaxed">{desc}</p>
                   </div>
@@ -206,25 +205,6 @@ export default function ContentSections() {
             <div className="text-center mt-8">
               <a href="#contact" className="btn-outline">Get Visa Help</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Travel Insurance */}
-      <section id="insurance" className="py-14 sm:py-20 bg-[#1f2a1d] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader label="Travel Insurance" title="Travel with confidence" subtitle="Comprehensive cover for medical emergencies, baggage, delays, and cancellations." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {insuranceFeatures.map((feat) => (
-              <div key={feat.title} className="card-equal p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#2d3a2a] text-center">
-                <Shield className="w-8 h-8 text-[#85AB8B] mx-auto mb-3" />
-                <h3 className="text-card-title font-semibold text-white mb-2">{feat.title}</h3>
-                <p className="text-sm text-white/65 leading-relaxed">{feat.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <a href="#contact" className="btn-primary !bg-[#85AB8B] hover:!bg-[#6d9473]">Get Insurance Quote</a>
           </div>
         </div>
       </section>
@@ -363,7 +343,7 @@ export default function ContentSections() {
               <div className="space-y-4">
                 <a href="tel:18002121225" className="flex items-center gap-3 text-[#1f2a1d] hover:text-[#336443] transition-colors">
                   <span className="w-11 h-11 rounded-full bg-[#FAFAFA] border border-[#E5E5E5] flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4" />
+                    <Phone size={18} weight="duotone" className="text-[#336443]" />
                   </span>
                   <div>
                     <p className="text-xs text-[#4b5b47]">Toll Free</p>
@@ -372,7 +352,7 @@ export default function ContentSections() {
                 </a>
                 <a href="mailto:info@travelsmantra.com" className="flex items-center gap-3 text-[#1f2a1d] hover:text-[#336443] transition-colors">
                   <span className="w-11 h-11 rounded-full bg-[#FAFAFA] border border-[#E5E5E5] flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4" />
+                    <EnvelopeSimple size={18} weight="duotone" className="text-[#336443]" />
                   </span>
                   <div>
                     <p className="text-xs text-[#4b5b47]">Email</p>
@@ -381,7 +361,7 @@ export default function ContentSections() {
                 </a>
                 <div className="flex items-center gap-3 text-[#1f2a1d]">
                   <span className="w-11 h-11 rounded-full bg-[#FAFAFA] border border-[#E5E5E5] flex items-center justify-center shrink-0">
-                    <Luggage className="w-4 h-4" />
+                    <SuitcaseRolling size={18} weight="duotone" className="text-[#336443]" />
                   </span>
                   <div>
                     <p className="text-xs text-[#4b5b47]">Services</p>
@@ -474,7 +454,7 @@ export default function ContentSections() {
                 <li><a href="#excursions" className="hover:text-white transition-colors">Excursions</a></li>
                 <li><a href="#offers" className="hover:text-white transition-colors">Hot Offers</a></li>
                 <li><a href="#visa" className="hover:text-white transition-colors">Visa</a></li>
-                <li><a href="#insurance" className="hover:text-white transition-colors">Travel Insurance</a></li>
+                <li><a href="#build-package" className="hover:text-white transition-colors">Build Your Package</a></li>
               </ul>
             </div>
             <div>

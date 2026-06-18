@@ -4,7 +4,6 @@ export const navLinks = [
   { href: '#about', label: 'About Us' },
   { href: '#offers', label: 'Hot Offers' },
   { href: '#visa', label: 'Visa' },
-  { href: '#insurance', label: 'Travel Insurance' },
   { href: '#build-package', label: 'Build Your Package' },
   { href: '#blog', label: 'Blog' },
   { href: '#contact', label: 'Contact Us' },
@@ -116,13 +115,6 @@ export const visaServices = [
   { title: 'Application Support', desc: 'Form filling, appointment booking, and embassy follow-up assistance.' },
   { title: 'Travel Insurance Help', desc: 'Insurance plans that meet visa requirements and protect your trip.' },
   { title: 'Country-wise Visa Information', desc: 'Up-to-date rules for Dubai, Schengen, UK, USA, and Central Asia.' },
-];
-
-export const insuranceFeatures = [
-  { title: 'Medical Emergency Cover', desc: 'Hospitalisation and emergency medical expenses abroad.' },
-  { title: 'Lost Baggage Support', desc: 'Compensation for delayed or lost checked-in baggage.' },
-  { title: 'Trip Delay Support', desc: 'Coverage for extended delays and missed connections.' },
-  { title: 'Cancellation Support', desc: 'Refund protection for unforeseen trip cancellations.' },
 ];
 
 export const testimonials = [

@@ -90,6 +90,55 @@ body,
   .label-field {
     @apply text-[11px] font-semibold uppercase tracking-wider text-[#4b5b47] mb-1.5 block;
   }
+
+  /* Hero enquiry — transparent on mobile, glass panel on desktop */
+  .hero-enquiry {
+    @apply bg-transparent border-0 shadow-none p-0;
+  }
+
+  .hero-enquiry-title {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-enquiry .label-field {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-input-field {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-input-field::placeholder {
+    color: #6b7280;
+  }
+
+  @media (min-width: 640px) {
+    .hero-enquiry {
+      @apply bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/60;
+    }
+
+    .hero-enquiry-title {
+      color: #1f2a1d;
+      text-shadow: none;
+    }
+
+    .hero-enquiry .label-field {
+      @apply text-[#4b5b47];
+      text-shadow: none;
+    }
+
+    .hero-input-field {
+      background: #fff;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-color: #e5e5e5;
+    }
+  }
 }
 
 .brand-logo--stack {
@@ -144,10 +193,22 @@ body,
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(31, 42, 29, 0.15) 25%,
-    rgba(250, 250, 250, 0.55) 62%,
+    rgba(31, 42, 29, 0.08) 40%,
+    rgba(250, 250, 250, 0.45) 75%,
     #fafafa 100%
   );
+}
+
+@media (min-width: 640px) {
+  .hero-scroll-fade {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(31, 42, 29, 0.15) 25%,
+      rgba(250, 250, 250, 0.55) 62%,
+      #fafafa 100%
+    );
+  }
 }
 
 /* Chatbot offset on mobile so it doesn't hide CTAs */
