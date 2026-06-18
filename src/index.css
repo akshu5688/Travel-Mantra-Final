@@ -91,59 +91,46 @@ body,
     @apply text-[11px] font-semibold uppercase tracking-wider text-[#4b5b47] mb-1.5 block;
   }
 
-  /* Hero enquiry — bounded glass section on top of video */
+  /* Hero enquiry — transparent with visible border frame over video */
   .hero-enquiry {
     @apply rounded-2xl p-4 sm:p-6;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1.5px solid rgba(255, 255, 255, 0.95);
-    box-shadow:
-      0 8px 32px rgba(31, 42, 29, 0.22),
-      0 2px 8px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    outline: 2px solid rgba(133, 171, 139, 0.28);
-    outline-offset: 2px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    outline: 1px solid rgba(133, 171, 139, 0.5);
+    outline-offset: 3px;
   }
 
   .hero-enquiry-heading {
-    @apply mb-5 pb-4 border-b border-[#E5E5E5];
+    @apply mb-5 pb-4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   }
 
   .hero-enquiry-title {
-    @apply text-base sm:text-lg font-semibold text-[#1f2a1d];
+    @apply text-base sm:text-lg font-semibold;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   }
 
   .hero-enquiry-sub {
-    @apply text-xs sm:text-sm text-[#4b5b47] mt-1;
+    @apply text-xs sm:text-sm mt-1;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
   }
 
   .hero-enquiry .label-field {
-    @apply text-[#4b5b47];
-    text-shadow: none;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
 
   .hero-input-field {
-    @apply bg-white border-[#E5E5E5];
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   .hero-input-field::placeholder {
-    color: #9ca3af;
-  }
-
-  @media (max-width: 639px) {
-    .hero-enquiry {
-      background: rgba(255, 255, 255, 0.92);
-      border-width: 2px;
-      border-color: rgba(255, 255, 255, 1);
-      outline-color: rgba(51, 100, 67, 0.35);
-    }
-  }
-
-  @media (min-width: 640px) {
-    .hero-enquiry {
-      background: rgba(255, 255, 255, 0.94);
-    }
+    color: #6b7280;
   }
 }
 

@@ -134,7 +134,7 @@ function App() {
             </div>
           </div>
 
-          {/* Hero enquiry form — bounded glass section */}
+          {/* Hero enquiry form — bordered frame, transparent over video */}
           <form
             id="hero-enquiry"
             className="hero-enquiry w-full max-w-4xl mt-8 sm:mt-10"
