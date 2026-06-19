@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 type PackageCardProps = {
   title: string;
   subtitle?: string;
@@ -29,12 +31,12 @@ export default function PackageCard({ title, subtitle, duration, price, image, a
           ))}
         </div>
         <div className="flex flex-col sm:flex-row gap-2 mt-4 pt-4 border-t border-[#E5E5E5]">
-          <a href="#contact" className="btn-primary flex-1 text-center">
+          <Link to="/contact" className="btn-primary flex-1 text-center">
             Book Now
-          </a>
-          <a href="#contact" className="btn-outline flex-1 text-center">
+          </Link>
+          <Link to="/contact" className="btn-outline flex-1 text-center">
             Send Enquiry
-          </a>
+          </Link>
         </div>
       </div>
     </article>

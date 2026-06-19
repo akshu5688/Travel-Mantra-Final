@@ -1,12 +1,12 @@
 export const navLinks = [
-  { href: '#tours', label: 'Tours' },
-  { href: '#excursions', label: 'Excursions' },
-  { href: '#about', label: 'About Us' },
-  { href: '#offers', label: 'Hot Offers' },
-  { href: '#visa', label: 'Visa' },
-  { href: '#build-package', label: 'Build Your Package' },
-  { href: '#blog', label: 'Blog' },
-  { href: '#contact', label: 'Contact Us' },
+  { href: '/tours', label: 'Tours' },
+  { href: '/excursions', label: 'Excursions' },
+  { href: '/about', label: 'About Us' },
+  { href: '/offers', label: 'Hot Offers' },
+  { href: '/visa', label: 'Visa' },
+  { href: '/build-package', label: 'Build Your Package' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export const trustCards = [

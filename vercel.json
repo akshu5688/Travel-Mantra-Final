@@ -3,5 +3,8 @@
   "buildCommand": "npm ci && npm run build",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/((?!assets/|images/).*)", "destination": "/index.html" }
+  ]
 }
