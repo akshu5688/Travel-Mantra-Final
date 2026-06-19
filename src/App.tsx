@@ -120,26 +120,28 @@ function App() {
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/55 via-[#1f2a1d]/20 to-[#1f2a1d]/35 sm:to-[#1f2a1d]/70 pointer-events-none" />
         <div className="hero-scroll-fade absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-40 pointer-events-none" aria-hidden="true" />
 
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-3 sm:px-6 pt-20 sm:pt-28 pb-12 sm:pb-16 max-w-7xl mx-auto w-full min-h-[calc(100dvh-4rem)]">
-          <div className="text-center w-full max-w-3xl">
+        <div className="relative z-10 flex flex-1 flex-col min-h-[100dvh] px-3 sm:px-6 pt-20 sm:pt-28 pb-6 sm:pb-8 max-w-7xl mx-auto w-full">
+          <div className="flex-1 flex flex-col items-center justify-center text-center w-full max-w-3xl mx-auto">
             <h1 className="text-hero font-semibold text-white drop-shadow-lg">
               Plan Your Dream Holiday with Travels Mantra
             </h1>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6 sm:mt-8 justify-center w-full sm:w-auto">
+          </div>
+
+          <div className="w-full max-w-3xl mx-auto shrink-0">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center w-full sm:w-auto sm:mx-auto">
               <a href="#tours" className="btn-secondary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base">Explore Packages</a>
               <a href="#hero-enquiry" className="btn-primary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base !bg-white !text-[#1f2a1d] hover:!bg-white/90">Get Free Trip Plan</a>
             </div>
+            <a
+              href="#hero-enquiry"
+              className="flex flex-col items-center gap-1 mt-5 sm:mt-6 text-white/80 hover:opacity-80 transition-opacity"
+              aria-label="Scroll to enquiry form"
+            >
+              <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
+              <CaretDown size={20} weight="bold" className="animate-bounce" />
+            </a>
           </div>
         </div>
-
-        <a
-          href="#hero-enquiry"
-          className="relative z-10 flex flex-col items-center gap-1 mx-auto mb-6 text-white/80 hover:opacity-80 transition-opacity sm:mb-8"
-          aria-label="Scroll to enquiry form"
-        >
-          <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
-          <CaretDown size={20} weight="bold" className="animate-bounce" />
-        </a>
       </section>
 
       <ContentSections />
