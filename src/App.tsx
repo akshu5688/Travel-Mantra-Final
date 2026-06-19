@@ -122,11 +122,11 @@ function App() {
 
         <div className="relative z-10 flex flex-1 flex-col min-h-[100dvh] px-3 sm:px-6 pt-20 sm:pt-28 pb-6 sm:pb-8 max-w-7xl mx-auto w-full">
           <div className="flex-1 flex flex-col items-center justify-center text-center w-full max-w-3xl mx-auto">
-            <h1 className="hero-headline">
-              <span className="hero-headline-lead">Plan Your Dream Holiday with</span>
-              <span className="brand-logo brand-logo--stack brand-logo--hero brand-logo--on-dark">
-                <span className="brand-travels">Travels</span>
-                <span className="brand-mantra"><em>M</em>antra</span>
+            <h1 className="text-hero font-semibold text-white drop-shadow-lg">
+              Plan Your Dream Holiday with{' '}
+              <span className="text-white">
+                <span className="text-[#85AB8B]">T</span>ravels{' '}
+                <span className="text-[#85AB8B]">M</span>antra
               </span>
             </h1>
           </div>
