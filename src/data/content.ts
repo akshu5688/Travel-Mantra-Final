@@ -43,7 +43,7 @@ export const packages = [
     duration: '4N / 5D',
     price: '₹48,500',
     image: '/images/tashkent-tour-package.webp',
-    alt: 'Tashkent Uzbekistan heritage tour package',
+    alt: 'Registan Square Samarkand Uzbekistan heritage tour package',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
   },
   {
@@ -52,7 +52,7 @@ export const packages = [
     duration: '5N / 6D',
     price: '₹56,999',
     image: '/images/almaty-tour-package.webp',
-    alt: 'Almaty Kazakhstan mountain city tour package',
+    alt: 'Almaty Kazakhstan city skyline with snow-capped Tian Shan mountains',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
   },
   {
@@ -60,7 +60,7 @@ export const packages = [
     duration: '5N / 6D',
     price: '₹72,999',
     image: '/images/singapore-cruise-package.webp',
-    alt: 'Singapore Marina Bay and Genting Dream Cruise package',
+    alt: 'Singapore Marina Bay Sands skyline and cruise package',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
   },
   {
@@ -76,7 +76,7 @@ export const packages = [
     duration: '4N / 5D',
     price: '₹49,999',
     image: '/images/baku-tour-package.webp',
-    alt: 'Baku Azerbaijan Flame Towers holiday package',
+    alt: 'Baku Azerbaijan Flame Towers skyline holiday package',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
   },
   {
@@ -84,17 +84,17 @@ export const packages = [
     duration: '4N / 5D',
     price: 'ON REQUEST',
     image: '/images/bishkek-tour-package.webp',
-    alt: 'Bishkek Kyrgyzstan mountain lake tour package',
+    alt: 'Issyk-Kul lake and Tian Shan mountains near Bishkek Kyrgyzstan',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
   },
 ];
 
 export const destinationCategories = [
-  { name: 'India', image: '/images/destination-india.webp', alt: 'India travel destinations including heritage and hill stations' },
-  { name: 'Asia', image: '/images/destination-asia.webp', alt: 'Asia tour packages including Southeast and East Asia' },
-  { name: 'Central Asia', image: '/images/destination-central-asia.webp', alt: 'Central Asia tours to Uzbekistan Kazakhstan and Kyrgyzstan' },
-  { name: 'Europe', image: '/images/destination-europe.webp', alt: 'Europe holiday packages and scenic city tours' },
-  { name: 'Middle East', image: '/images/destination-middle-east.webp', alt: 'Middle East tours including Dubai and Baku' },
+  { name: 'India', image: '/images/destination-india.webp', alt: 'Taj Mahal and iconic India heritage destinations' },
+  { name: 'Asia', image: '/images/destination-asia.webp', alt: 'Thailand temples and Southeast Asia tour destinations' },
+  { name: 'Central Asia', image: '/images/destination-central-asia.webp', alt: 'Registan Square Samarkand and Central Asia Silk Road tours' },
+  { name: 'Europe', image: '/images/destination-europe.webp', alt: 'Santorini Greece and scenic European holiday destinations' },
+  { name: 'Middle East', image: '/images/destination-middle-east.webp', alt: 'Baku Flame Towers and Middle East city tours' },
   { name: 'Africa', image: '/images/destination-africa.webp', alt: 'Africa safari and cultural tour packages' },
   { name: 'North America', image: '/images/destination-north-america.webp', alt: 'North America city and nature tour packages' },
   { name: 'Balkans', image: '/images/destination-balkans.webp', alt: 'Balkans heritage and coastal tour packages' },
