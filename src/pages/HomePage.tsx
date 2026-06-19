@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="relative z-10 flex flex-1 flex-col min-h-[100dvh] px-3 sm:px-6 pt-20 sm:pt-28 pb-6 sm:pb-8 max-w-7xl mx-auto w-full">
           <div className="flex-1 flex flex-col items-center justify-center text-center w-full max-w-3xl mx-auto">
             <h1 className="text-hero font-semibold text-white drop-shadow-lg">
-              Plan Your Dream Holiday with Travels <span className="text-[#1f2a1d] hero-m-accent">M</span>antra
+              Plan Your Dream Holiday with Travels <span className="text-[#85AB8B]">M</span>antra
             </h1>
           </div>
 
