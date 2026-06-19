@@ -125,8 +125,8 @@ function App() {
             <h1 className="text-hero font-semibold text-white drop-shadow-lg">
               Plan Your Dream Holiday with{' '}
               <span className="text-white">
-                <span className="text-[#85AB8B]">T</span>ravels{' '}
-                <span className="text-[#85AB8B]">M</span>antra
+                <span className="hero-brand-accent">T</span>ravels{' '}
+                <span className="hero-brand-accent">M</span>antra
               </span>
             </h1>
           </div>
