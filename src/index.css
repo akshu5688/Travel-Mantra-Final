@@ -98,76 +98,49 @@ body,
     @apply text-[11px] font-semibold uppercase tracking-wider text-[#4b5b47] mb-1.5 block;
   }
 
-  /* Hero enquiry — transparent with visible border frame over video */
-  .hero-enquiry {
-    @apply rounded-2xl p-4 sm:p-6;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    outline: 1px solid rgba(133, 171, 139, 0.5);
-    outline-offset: 3px;
+  /* Trip enquiry — light section card */
+  .trip-enquiry {
+    @apply rounded-2xl p-4 sm:p-6 bg-white border border-[#E5E5E5] shadow-sm;
   }
 
-  .hero-enquiry-heading {
-    @apply mb-5 pb-4;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  .trip-enquiry-heading {
+    @apply mb-5 pb-4 border-b border-[#E5E5E5];
   }
 
-  .hero-enquiry-title {
-    @apply text-base sm:text-lg font-semibold;
-    color: #fff;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  .trip-enquiry-title {
+    @apply text-base sm:text-lg font-semibold text-[#1f2a1d];
   }
 
-  .hero-enquiry-sub {
-    @apply text-xs sm:text-sm mt-1;
-    color: rgba(255, 255, 255, 0.88);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
-  }
-
-  .hero-enquiry .label-field {
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
-  }
-
-  .hero-input-field {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .hero-input-field::placeholder {
-    color: #6b7280;
+  .trip-enquiry-sub {
+    @apply text-xs sm:text-sm mt-1 text-[#4b5b47];
   }
 
   @media (max-width: 639px) {
-    .hero-enquiry {
-      @apply p-2.5 rounded-xl;
-      outline-offset: 2px;
-      border-width: 1.5px;
+    .trip-enquiry {
+      @apply p-3 rounded-xl;
     }
 
-    .hero-enquiry-heading {
-      @apply mb-2 pb-2;
+    .trip-enquiry-heading {
+      @apply mb-3 pb-3;
     }
 
-    .hero-enquiry-title {
+    .trip-enquiry-title {
       @apply text-sm;
     }
 
-    .hero-enquiry-sub {
-      display: none;
+    .trip-enquiry-sub {
+      @apply text-[11px];
     }
 
-    .hero-enquiry .label-field {
+    .trip-enquiry .label-field {
       @apply text-[9px] mb-0.5 tracking-wide;
     }
 
-    .hero-enquiry .hero-input-field {
+    .trip-enquiry .input-field {
       @apply py-1.5 px-2 text-xs rounded-lg min-h-0;
     }
 
-    .hero-enquiry-submit {
+    .trip-enquiry-submit {
       @apply py-2 text-sm rounded-lg;
     }
   }

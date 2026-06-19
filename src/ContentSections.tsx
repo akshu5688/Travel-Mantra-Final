@@ -15,6 +15,7 @@ import {
   SuitcaseRolling,
 } from '@phosphor-icons/react';
 import PackageCard from './components/PackageCard';
+import QuickTripEnquiry from './components/QuickTripEnquiry';
 import {
   trustCards,
   packages,
@@ -43,10 +44,18 @@ function SectionHeader({ label, title, subtitle }: { label: string; title: strin
 export default function ContentSections() {
   return (
     <>
-      {/* Trust cards */}
+      {/* Intro, enquiry form & trust cards */}
       <section className="relative z-10 -mt-6 sm:-mt-8 py-10 sm:py-14 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
+            <p className="text-body text-[#4b5b47] leading-relaxed">
+              Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.
+            </p>
+          </div>
+
+          <QuickTripEnquiry />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 sm:mt-12">
             {trustCards.map((card, i) => {
               const Icon = trustIcons[i];
               return (

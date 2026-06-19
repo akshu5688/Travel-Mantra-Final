@@ -3,7 +3,7 @@ import { List, X, CaretDown } from '@phosphor-icons/react';
 import BoomerangVideoBg from './BoomerangVideoBg';
 import ContentSections from './ContentSections';
 import Chatbot from './components/Chatbot';
-import { navLinks, enquiryDestinations, budgetOptions } from './data/content';
+import { navLinks } from './data/content';
 
 const BG_VIDEO =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4';
@@ -57,7 +57,7 @@ function App() {
           </div>
 
           <a
-            href="#contact"
+            href="#hero-enquiry"
             className={`hidden lg:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
               !navSolid ? '!bg-white !text-[#1f2a1d] hover:!bg-white/90' : ''
             }`}
@@ -108,7 +108,7 @@ function App() {
               {link.label}
             </a>
           ))}
-          <a href="#contact" onClick={closeMenu} className="btn-primary w-full mt-6 text-center">
+          <a href="#hero-enquiry" onClick={closeMenu} className="btn-primary w-full mt-6 text-center">
             Get Free Trip Plan
           </a>
         </div>
@@ -120,88 +120,22 @@ function App() {
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/55 via-[#1f2a1d]/20 to-[#1f2a1d]/35 sm:to-[#1f2a1d]/70 pointer-events-none" />
         <div className="hero-scroll-fade absolute inset-x-0 bottom-0 z-[2] h-32 sm:h-40 pointer-events-none" aria-hidden="true" />
 
-        <div className="relative z-10 flex-1 flex flex-col items-center px-3 sm:px-6 pt-20 sm:pt-28 pb-4 sm:pb-8 max-w-7xl mx-auto w-full">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-3 sm:px-6 pt-20 sm:pt-28 pb-12 sm:pb-16 max-w-7xl mx-auto w-full min-h-[calc(100dvh-4rem)]">
           <div className="text-center w-full max-w-3xl">
             <h1 className="text-hero font-semibold text-white drop-shadow-lg">
               Plan Your Dream Holiday with Travels Mantra
             </h1>
-            <p className="text-body text-white/90 mt-3 sm:mt-5 max-w-2xl mx-auto drop-shadow-md line-clamp-3 sm:line-clamp-none">
-              Book complete travel packages with flights, hotels, visa assistance, sightseeing, transfers, insurance, and expert travel support.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4 sm:mt-8 justify-center w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6 sm:mt-8 justify-center w-full sm:w-auto">
               <a href="#tours" className="btn-secondary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base">Explore Packages</a>
-              <a href="#contact" className="btn-primary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base !bg-white !text-[#1f2a1d] hover:!bg-white/90">Get Free Trip Plan</a>
+              <a href="#hero-enquiry" className="btn-primary w-full sm:w-auto !py-2.5 sm:!py-3 text-sm sm:text-base !bg-white !text-[#1f2a1d] hover:!bg-white/90">Get Free Trip Plan</a>
             </div>
           </div>
-
-          {/* Hero enquiry form — bordered frame, transparent over video */}
-          <form
-            id="hero-enquiry"
-            className="hero-enquiry w-full max-w-4xl mt-4 sm:mt-10"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="hero-enquiry-heading">
-              <p className="hero-enquiry-title">Quick Trip Enquiry</p>
-              <p className="hero-enquiry-sub">Share your trip details — we&apos;ll plan the rest</p>
-            </div>
-            <div className="hero-enquiry-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
-              <div className="col-span-2 lg:col-span-1">
-                <label className="label-field">Destination</label>
-                <select className="input-field hero-input-field" defaultValue="">
-                  <option value="" disabled>Select destination</option>
-                  {enquiryDestinations.map((d) => (
-                    <option key={d} value={d}>{d}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="label-field">Departure From</label>
-                <input className="input-field hero-input-field" placeholder="Delhi, Mumbai" type="text" />
-              </div>
-              <div>
-                <label className="label-field">Travel Date</label>
-                <input className="input-field hero-input-field" type="date" />
-              </div>
-              <div>
-                <label className="label-field">Adults</label>
-                <select className="input-field hero-input-field" defaultValue="2">
-                  {[1, 2, 3, 4, 5, 6].map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="label-field">Children</label>
-                <select className="input-field hero-input-field" defaultValue="0">
-                  {[0, 1, 2, 3, 4].map((n) => (
-                    <option key={n} value={n}>{n}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <label className="label-field">Budget</label>
-                <select className="input-field hero-input-field" defaultValue="">
-                  <option value="" disabled>Select budget</option>
-                  {budgetOptions.map((b) => (
-                    <option key={b} value={b}>{b}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <label className="label-field">Phone Number</label>
-                <input className="input-field hero-input-field" placeholder="+91 98765 43210" type="tel" required />
-              </div>
-              <div className="col-span-2 sm:col-span-2 lg:col-span-2 flex items-end">
-                <button type="submit" className="btn-primary hero-enquiry-submit w-full">Send Enquiry</button>
-              </div>
-            </div>
-          </form>
         </div>
 
         <a
-          href="#about"
-          className="relative z-10 hidden sm:flex flex-col items-center gap-1 mx-auto mb-6 text-white/80 hover:opacity-80 transition-opacity"
-          aria-label="Scroll down"
+          href="#hero-enquiry"
+          className="relative z-10 flex flex-col items-center gap-1 mx-auto mb-6 text-white/80 hover:opacity-80 transition-opacity sm:mb-8"
+          aria-label="Scroll to enquiry form"
         >
           <span className="text-[10px] uppercase tracking-widest font-medium">Scroll</span>
           <CaretDown size={20} weight="bold" className="animate-bounce" />
