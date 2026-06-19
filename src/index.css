@@ -47,8 +47,20 @@ body,
   }
 }
 
+.hero-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.hero-title span {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+}
+
 .hero-m-accent {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.85), 0 0 2px rgba(255, 255, 255, 0.6);
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  text-shadow: none;
 }
 
 .text-section-title {
