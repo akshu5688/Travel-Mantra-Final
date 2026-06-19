@@ -185,6 +185,55 @@ body,
 .brand-logo--on-dark .brand-mantra { color: #fff; }
 .brand-logo--on-dark .brand-mantra em { color: #85AB8B; }
 
+.hero-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .hero-headline {
+    gap: 1rem;
+  }
+}
+
+.hero-headline-lead {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.brand-logo--hero.brand-logo--stack {
+  align-items: center;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.4));
+}
+
+.brand-logo--hero.brand-logo--stack .brand-travels {
+  font-size: 0.6875rem;
+  letter-spacing: 0.34em;
+}
+
+.brand-logo--hero.brand-logo--stack .brand-mantra {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .brand-logo--hero.brand-logo--stack .brand-travels {
+    font-size: 0.8125rem;
+    letter-spacing: 0.36em;
+  }
+
+  .brand-logo--hero.brand-logo--stack .brand-mantra {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
 .hero-video-wrap {
   isolation: isolate;
 }
