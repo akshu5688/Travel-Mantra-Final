@@ -102,12 +102,48 @@ export const destinationCategories = [
 ];
 
 export const excursions = [
-  { title: 'Dubai Desert Safari', desc: 'Dune bashing, BBQ dinner, and cultural performances with hotel transfers.', region: 'Middle East' },
-  { title: 'Bali Temple & Rice Terrace Tour', desc: 'Ubud culture trail with local guide, lunch, and private transport.', region: 'Asia' },
-  { title: 'Tashkent City Heritage Walk', desc: 'Historic mosques, bazaars, and metro art with expert local guide.', region: 'Central Asia' },
-  { title: 'Singapore Sentosa Day Pass', desc: 'Cable car, beaches, and attractions with optional cruise add-on.', region: 'Asia' },
-  { title: 'Baku Old City Excursion', desc: 'Walled city, Flame Towers viewpoint, and Caspian waterfront tour.', region: 'Middle East' },
-  { title: 'Vietnam Cu Chi & City Tour', desc: 'Half-day heritage sites with transfers and English-speaking guide.', region: 'Asia' },
+  {
+    title: 'Dubai Desert Safari',
+    desc: 'Dune bashing, BBQ dinner, and cultural performances with hotel transfers.',
+    region: 'Middle East',
+    image: '/images/excursion-dubai-desert-safari.webp',
+    alt: 'Dubai desert safari dunes at sunset',
+  },
+  {
+    title: 'Bali Temple & Rice Terrace Tour',
+    desc: 'Ubud culture trail with local guide, lunch, and private transport.',
+    region: 'Asia',
+    image: '/images/excursion-bali-temple.webp',
+    alt: 'Bali temple and lush rice terraces in Ubud',
+  },
+  {
+    title: 'Tashkent City Heritage Walk',
+    desc: 'Historic mosques, bazaars, and metro art with expert local guide.',
+    region: 'Central Asia',
+    image: '/images/excursion-tashkent-heritage.webp',
+    alt: 'Tashkent Uzbekistan heritage architecture and bazaar',
+  },
+  {
+    title: 'Singapore Sentosa Day Pass',
+    desc: 'Cable car, beaches, and attractions with optional cruise add-on.',
+    region: 'Asia',
+    image: '/images/excursion-singapore-sentosa.webp',
+    alt: 'Singapore Marina Bay skyline and Sentosa attractions',
+  },
+  {
+    title: 'Baku Old City Excursion',
+    desc: 'Walled city, Flame Towers viewpoint, and Caspian waterfront tour.',
+    region: 'Middle East',
+    image: '/images/excursion-baku-old-city.webp',
+    alt: 'Baku Azerbaijan old city walls and historic streets',
+  },
+  {
+    title: 'Vietnam Cu Chi & City Tour',
+    desc: 'Half-day heritage sites with transfers and English-speaking guide.',
+    region: 'Asia',
+    image: '/images/excursion-vietnam-cu-chi.webp',
+    alt: 'Vietnam Ho Chi Minh city and heritage landmarks',
+  },
 ];
 
 export const visaServices = [
@@ -137,9 +173,27 @@ export const testimonials = [
 ];
 
 export const blogPosts = [
-  { title: 'How to Plan a Central Asia Tour from India', date: 'May 2026', excerpt: 'Tashkent, Almaty, and Bishkek — what to know before you book.' },
-  { title: 'Dubai Visa Guide for Indian Travellers', date: 'April 2026', excerpt: 'Documents, processing time, and insurance requirements explained.' },
-  { title: 'Best Time to Visit Bali & Vietnam', date: 'March 2026', excerpt: 'Season-wise tips for beaches, culture, and sightseeing.' },
+  {
+    title: 'How to Plan a Central Asia Tour from India',
+    date: 'May 2026',
+    excerpt: 'Tashkent, Almaty, and Bishkek — what to know before you book.',
+    image: '/images/blog-central-asia-guide.webp',
+    alt: 'Central Asia mountain landscape near Almaty Kazakhstan',
+  },
+  {
+    title: 'Dubai Visa Guide for Indian Travellers',
+    date: 'April 2026',
+    excerpt: 'Documents, processing time, and insurance requirements explained.',
+    image: '/images/blog-dubai-visa-guide.webp',
+    alt: 'Dubai skyline with Burj Khalifa at dusk',
+  },
+  {
+    title: 'Best Time to Visit Bali & Vietnam',
+    date: 'March 2026',
+    excerpt: 'Season-wise tips for beaches, culture, and sightseeing.',
+    image: '/images/blog-bali-vietnam-season.webp',
+    alt: 'Bali Indonesia tropical temple and palm scenery',
+  },
 ];
 
 export const enquiryDestinations = [

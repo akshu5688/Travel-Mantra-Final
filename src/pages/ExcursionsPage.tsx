@@ -16,13 +16,18 @@ export default function ExcursionsPage() {
           <SectionHeader label="Experiences" title="Handpicked excursions" subtitle="Private transfers and expert guides included." dark />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {excursions.map((exc) => (
-              <article key={exc.title} className="card-equal p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#2d3a2a] hover:border-[#85AB8B]/40 transition-colors">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#85AB8B]">{exc.region}</span>
-                <h3 className="text-card-title font-semibold text-white mt-2">{exc.title}</h3>
-                <p className="text-sm text-white/65 mt-2 leading-relaxed flex-1">{exc.desc}</p>
-                <Link to="/contact" className="inline-block mt-4 text-sm font-semibold text-[#85AB8B] hover:text-white transition-colors">
-                  Enquire Now →
-                </Link>
+              <article key={exc.title} className="card-equal flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#2d3a2a] hover:border-[#85AB8B]/40 transition-colors">
+                <div className="aspect-[16/10] overflow-hidden shrink-0">
+                  <img src={exc.image} alt={exc.alt} className="img-cover w-full h-full" loading="lazy" />
+                </div>
+                <div className="flex flex-col flex-1 p-5 sm:p-6">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#85AB8B]">{exc.region}</span>
+                  <h3 className="text-card-title font-semibold text-white mt-2">{exc.title}</h3>
+                  <p className="text-sm text-white/65 mt-2 leading-relaxed flex-1">{exc.desc}</p>
+                  <Link to="/contact" className="inline-block mt-4 text-sm font-semibold text-[#85AB8B] hover:text-white transition-colors">
+                    Enquire Now →
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
