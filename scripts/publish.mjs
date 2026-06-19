@@ -24,4 +24,17 @@ if (existsSync(assetsOut)) {
 mkdirSync(assetsOut, { recursive: true });
 cpSync(join(dist, 'assets'), assetsOut, { recursive: true });
 
-console.log('Published build to index.html + assets/');
+const imagesOut = join(root, 'images');
+const distImages = join(dist, 'images');
+const publicImages = join(root, 'public', 'images');
+
+if (existsSync(imagesOut)) {
+  rmSync(imagesOut, { recursive: true, force: true });
+}
+if (existsSync(distImages)) {
+  cpSync(distImages, imagesOut, { recursive: true });
+} else if (existsSync(publicImages)) {
+  cpSync(publicImages, imagesOut, { recursive: true });
+}
+
+console.log('Published build to index.html + assets/ + images/');
