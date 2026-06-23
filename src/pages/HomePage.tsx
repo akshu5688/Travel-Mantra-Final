@@ -109,7 +109,7 @@ export default function HomePage() {
 
 
 
-              <div className="flex flex-wrap gap-2 mt-5">
+              <div className="hidden lg:flex flex-wrap gap-2 mt-5">
 
                 {heroTrustBadges.map((badge) => (
 
