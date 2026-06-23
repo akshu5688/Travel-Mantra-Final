@@ -38,6 +38,9 @@ export default function HomePage() {
               <h1 className="hero-title font-display text-hero font-semibold text-white drop-shadow-lg">
                 Plan Your Dream Holiday with Travels Mantra
               </h1>
+              <p className="text-body text-white/90 mt-4 max-w-xl leading-relaxed drop-shadow-md">
+                {HERO_SUBHEADLINE}
+              </p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6">
                 <Link to="/tours" className="btn-secondary w-full sm:w-auto">
                   Explore Packages
@@ -76,9 +79,6 @@ export default function HomePage() {
       {/* Intro + hot offers — below hero (mobile + desktop) */}
       <section className="relative z-20 pt-8 lg:pt-14 pb-8 sm:pb-10 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
-          <p className="text-body text-[#4b5b47] max-w-3xl leading-relaxed mb-6 sm:mb-8">
-            {HERO_SUBHEADLINE}
-          </p>
           <OfferStrip />
         </div>
       </section>
