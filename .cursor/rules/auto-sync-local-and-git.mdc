@@ -1,0 +1,21 @@
+---
+description: After every Travels Mantra code change, sync local files and push to git
+alwaysApply: true
+---
+
+# Auto-sync local + git (Travel-Mantra-Final)
+
+Production site code lives in **Travel-Mantra-Final** (`C:\Users\aksha\Travel-Mantra-Final`), not `travelmantra LP/design1`.
+
+After **every** implementation or fix in this project:
+
+1. **Save code** in `Travel-Mantra-Final/src/` (and related config/assets as needed).
+2. **Local preview**: Changes apply via Vite HMR when `npm run dev` is running (`http://localhost:5173` or next free port). Start dev server if the user is actively previewing and it is not running.
+3. **Git** (same turn, do not wait for the user to ask):
+   - `git status` / `git diff` to verify scope
+   - Stage only relevant files (never secrets)
+   - Commit with a short, accurate message (why, not just what)
+   - `git push` to `origin` on the current branch (usually `main`)
+4. **Tell the user** briefly: what changed, localhost URL if dev is running, commit hash, and that Vercel will deploy.
+
+Do **not** leave edits only on disk or only pushed without applying the file changes first.
