@@ -94,7 +94,6 @@ body,
 @media (min-width: 1024px) {
   .hero-section {
     min-height: 75vh;
-    max-height: 85vh;
   }
 }
 

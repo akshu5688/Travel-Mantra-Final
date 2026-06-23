@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom';
 import { heroOffers } from '../data/content';
 
-export default function OfferStrip() {
+type OfferStripProps = {
+  /** White heading on dark hero; dark heading on light sections */
+  variant?: 'hero' | 'default';
+};
+
+export default function OfferStrip({ variant = 'default' }: OfferStripProps) {
+  const headingClass =
+    variant === 'hero'
+      ? 'text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]'
+      : 'text-[#1f2a1d]';
+
   return (
     <div className="w-full">
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#85AB8B] mb-3">Hot Offers</p>
+      <p className={`text-[11px] font-bold uppercase tracking-widest mb-3 ${headingClass}`}>Hot Offers</p>
       <div className="offer-scroll flex gap-3 overflow-x-auto scrollbar-hide pb-1 snap-x snap-mandatory -mx-1 px-1">
         {heroOffers.map((offer) => (
           <article

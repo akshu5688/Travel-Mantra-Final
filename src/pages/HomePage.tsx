@@ -14,7 +14,7 @@ import SectionHeader from '../components/SectionHeader';
 
 import { SealCheck, Timer, MapTrifold, Stamp, ShieldCheck, SlidersHorizontal } from '@phosphor-icons/react';
 
-import { heroPackages, heroTrustBadges, trustCards, testimonials } from '../data/content';
+import { heroPackages, trustCards, testimonials } from '../data/content';
 
 
 
@@ -63,7 +63,7 @@ export default function HomePage() {
 
 
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-10">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-14">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start lg:items-center">
 
@@ -76,12 +76,6 @@ export default function HomePage() {
                 Plan Your Dream Holiday with Travels Mantra
 
               </h1>
-
-              <p className="hidden lg:block text-body text-white/90 mt-4 max-w-xl leading-relaxed drop-shadow-md">
-                {HERO_SUBHEADLINE}
-              </p>
-
-
 
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6">
 
@@ -107,28 +101,6 @@ export default function HomePage() {
 
               </div>
 
-
-
-              <div className="hidden lg:flex flex-wrap gap-2 mt-5">
-
-                {heroTrustBadges.map((badge) => (
-
-                  <span
-
-                    key={badge}
-
-                    className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-white/95 border border-white/25 bg-white/10 backdrop-blur-sm px-2.5 py-1.5 rounded-full"
-
-                  >
-
-                    {badge}
-
-                  </span>
-
-                ))}
-
-              </div>
-
             </div>
 
 
@@ -151,11 +123,11 @@ export default function HomePage() {
 
           {/* Mobile — offers first, then packages, then search */}
           <div className="lg:hidden mt-6">
-            <OfferStrip />
+            <OfferStrip variant="hero" />
           </div>
 
           <div className="lg:hidden mt-5">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#85AB8B] mb-3">Featured Packages</p>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] mb-3">Featured Packages</p>
             <div className="hero-pkg-scroll flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
               {heroPackages.map((pkg) => (
                 <HeroPackageCard key={pkg.title} {...pkg} compact />
@@ -178,20 +150,17 @@ export default function HomePage() {
 
 
 
-      {/* Desktop search + offers — overlapping panel below hero */}
+      {/* Desktop offers + intro — below hero, no overlap */}
+      <section className="hidden lg:block relative z-20 pt-10 lg:pt-14 pb-8 sm:pb-10 bg-[#FAFAFA]">
 
-      <section className="hidden lg:block relative z-20 -mt-8 pb-8 sm:pb-10 bg-[#FAFAFA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-body text-[#4b5b47] max-w-3xl leading-relaxed mb-8">
+            {HERO_SUBHEADLINE}
+          </p>
 
           <div className="mb-8">
             <OfferStrip />
-          </div>
-
-          <div className="hero-search-panel rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-6">
-
-            <TripSearchBox />
-
           </div>
 
         </div>
@@ -251,6 +220,12 @@ export default function HomePage() {
       <section className="py-14 sm:py-20 bg-white pb-24 sm:pb-20">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="hidden lg:block hero-search-panel rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-6 mb-12 sm:mb-14">
+
+            <TripSearchBox />
+
+          </div>
 
           <SectionHeader label="Traveller Stories" title="What our travellers say" />
 
