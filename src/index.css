@@ -35,14 +35,14 @@ body,
 /* Typography scale */
 .text-hero {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.125rem, 5.5vw, 4rem);
+  font-size: clamp(2.125rem, 4.5vw, 4rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 @media (max-width: 639px) {
   .text-hero {
-    font-size: clamp(1.625rem, 6.5vw, 2rem);
+    font-size: clamp(2.125rem, 8vw, 2.625rem);
     line-height: 1.2;
   }
 }
@@ -65,7 +65,7 @@ body,
 
 .text-section-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
@@ -83,6 +83,44 @@ body,
 .text-btn {
   font-size: 0.9375rem;
   font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Hero section — content-driven, not full-screen branding */
+.hero-section {
+  min-height: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 75vh;
+    max-height: 85vh;
+  }
+}
+
+/* Package images — consistent 4:3 ratio */
+.pkg-img-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  width: 100%;
+}
+
+.pkg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-pkg-card .pkg-img-wrap {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-pkg-card:not(.hero-pkg-card--compact) .pkg-img-wrap {
+    width: 120px;
+    align-self: stretch;
+  }
 }
 
 @layer components {
@@ -114,7 +152,28 @@ body,
     @apply text-[11px] font-semibold uppercase tracking-wider text-[#4b5b47] mb-1.5 block;
   }
 
-  /* Trip enquiry — light section card */
+  /* Trip search box */
+  .trip-search {
+    @apply w-full;
+  }
+
+  .trip-search-heading {
+    @apply mb-4 sm:mb-5 pb-3 sm:pb-4 border-b border-[#E5E5E5];
+  }
+
+  .trip-search-title {
+    @apply text-base sm:text-lg font-semibold text-[#1f2a1d] font-display;
+  }
+
+  .trip-search-sub {
+    @apply text-xs sm:text-sm mt-1 text-[#4b5b47];
+  }
+
+  .trip-search-submit {
+    @apply w-full;
+  }
+
+  /* Trip enquiry — light section card (legacy) */
   .trip-enquiry {
     @apply rounded-2xl p-4 sm:p-6 bg-white border border-[#E5E5E5] shadow-sm;
   }
@@ -132,6 +191,30 @@ body,
   }
 
   @media (max-width: 639px) {
+    .trip-search-heading {
+      @apply mb-3 pb-3;
+    }
+
+    .trip-search-title {
+      @apply text-sm;
+    }
+
+    .trip-search-sub {
+      @apply text-[11px];
+    }
+
+    .trip-search .label-field {
+      @apply text-[9px] mb-0.5 tracking-wide;
+    }
+
+    .trip-search .input-field {
+      @apply py-1.5 px-2 text-xs rounded-lg min-h-0;
+    }
+
+    .trip-search-submit {
+      @apply py-2.5 text-sm rounded-lg;
+    }
+
     .trip-enquiry {
       @apply p-3 rounded-xl;
     }
@@ -214,27 +297,26 @@ body,
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(31, 42, 29, 0.08) 40%,
-    rgba(250, 250, 250, 0.45) 75%,
+    rgba(250, 250, 250, 0.3) 80%,
     #fafafa 100%
   );
 }
 
-@media (min-width: 640px) {
-  .hero-scroll-fade {
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(31, 42, 29, 0.15) 25%,
-      rgba(250, 250, 250, 0.55) 62%,
-      #fafafa 100%
-    );
+/* Chatbot offset on mobile so it doesn't hide CTAs */
+@media (max-width: 1023px) {
+  .chatbot-root {
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    right: max(0.75rem, env(safe-area-inset-right));
   }
 }
 
-/* Chatbot offset on mobile so it doesn't hide CTAs */
 @media (max-width: 639px) {
   .chatbot-root {
     bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .chatbot-root button.w-14 {
+    width: 3rem;
+    height: 3rem;
   }
 }

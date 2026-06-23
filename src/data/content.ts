@@ -1,14 +1,111 @@
 export const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/tours', label: 'Tours' },
   { href: '/excursions', label: 'Excursions' },
   { href: '/about', label: 'About Us' },
   { href: '/offers', label: 'Hot Offers' },
   { href: '/visa', label: 'Visa' },
+  { href: '/insurance', label: 'Travel Insurance' },
   { href: '/build-package', label: 'Build Your Package' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
 ];
+
+export const heroTrustBadges = [
+  'Best Price Guarantee',
+  'Visa Assistance',
+  'Custom Packages',
+  '24/7 Travel Support',
+] as const;
+
+export const heroPackages = [
+  {
+    title: 'Dubai Family Holiday',
+    duration: '4N / 5D',
+    inclusions: ['Visa', 'Hotel', 'Transfers', 'Sightseeing'],
+    price: '₹49,999',
+    priceLabel: 'Starting from ₹49,999',
+    image: '/images/dubai-tour-package.webp',
+    alt: 'Dubai skyline family holiday tour package',
+    cta: 'View Package',
+    href: '/contact',
+  },
+  {
+    title: 'Bali Honeymoon Package',
+    duration: '5N / 6D',
+    inclusions: ['Hotel', 'Transfers', 'Sightseeing'],
+    price: '₹59,999',
+    priceLabel: 'Starting from ₹59,999',
+    image: '/images/bali-indonesia-tour.webp',
+    alt: 'Bali Indonesia honeymoon package with tropical scenery',
+    cta: 'View Package',
+    href: '/contact',
+  },
+  {
+    title: 'Tashkent Tour Package',
+    duration: '4N / 5D',
+    inclusions: ['Flight', 'Food', 'Visa', 'Travel Guide', 'Transport'],
+    price: 'ON REQUEST',
+    priceLabel: 'ON REQUEST',
+    image: '/images/tashkent-tour-package.webp',
+    alt: 'Tashkent Uzbekistan heritage tour package',
+    cta: 'Send Enquiry',
+    href: '/contact',
+  },
+] as const;
+
+export const heroOffers = [
+  {
+    title: 'Dubai Family Special',
+    text: 'Save ₹8,000 on select family packages',
+    priceNote: 'Save ₹8,000',
+    image: '/images/dubai-tour-package.webp',
+    alt: 'Dubai family holiday special offer',
+    href: '/offers',
+  },
+  {
+    title: 'Bali Honeymoon Deal',
+    text: 'Romantic escapes with exclusive savings',
+    priceNote: 'Save ₹10,000',
+    image: '/images/bali-indonesia-tour.webp',
+    alt: 'Bali honeymoon deal offer',
+    href: '/offers',
+  },
+  {
+    title: 'Thailand Budget Package',
+    text: 'Beaches, temples & city tours included',
+    priceNote: 'From ₹39,999',
+    image: '/images/destination-asia.webp',
+    alt: 'Thailand budget travel package offer',
+    href: '/tours',
+  },
+  {
+    title: 'Baku Holiday Deal',
+    text: 'Flame Towers, Old City & Caspian views',
+    priceNote: 'ON REQUEST',
+    image: '/images/baku-tour-package.webp',
+    alt: 'Baku Azerbaijan holiday deal',
+    href: '/contact',
+  },
+] as const;
+
+export const tripTypeOptions = [
+  'Family',
+  'Honeymoon',
+  'Friends',
+  'Group Tour',
+  'Luxury',
+  'Budget',
+  'Visa Help',
+] as const;
+
+export const travellerOptions = [
+  '1 Adult',
+  '2 Adults',
+  '2 Adults, 1 Child',
+  '2 Adults, 2 Children',
+  '3 Adults',
+  '4+ Travellers',
+] as const;
 
 export const trustCards = [
   { title: 'Best Price Guarantee', desc: 'Competitive rates on flights, hotels, and complete tour packages.' },
@@ -19,7 +116,7 @@ export const trustCards = [
   { title: 'Build Your Package', desc: 'Customise destination, dates, hotels, flights, visa, and budget.' },
 ];
 
-export const inclusionBadges = ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'] as const;
+export const inclusionBadges = ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport', 'Insurance'] as const;
 
 export const packages = [
   {

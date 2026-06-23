@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-widest text-[#85AB8B] mb-4">Services</p>
             <ul className="space-y-2 text-sm">
-              {navLinks.slice(0, 5).map((link) => (
+              {navLinks.slice(0, 6).map((link) => (
                 <li key={link.href}>
                   <Link to={link.href} className="hover:text-white transition-colors">{link.label}</Link>
                 </li>
