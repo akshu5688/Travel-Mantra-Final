@@ -184,13 +184,15 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="hero-search-panel rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-6 mb-8">
+          <div className="mb-8">
+            <OfferStrip />
+          </div>
+
+          <div className="hero-search-panel rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-6">
 
             <TripSearchBox />
 
           </div>
-
-          <OfferStrip />
 
         </div>
 
