@@ -62,8 +62,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Mobile featured packages — stays in hero */}
-          <div className="lg:hidden mt-6 pb-2">
+          {/* Mobile featured packages — compact horizontal cards */}
+          <div className="lg:hidden mt-4 pb-1">
             <p className="text-[11px] font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] mb-3">
               Featured Packages
             </p>

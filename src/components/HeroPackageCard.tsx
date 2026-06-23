@@ -27,25 +27,31 @@ export default function HeroPackageCard({
     <article
       className={`hero-pkg-card flex overflow-hidden rounded-xl bg-white/95 backdrop-blur-sm border border-white/40 shadow-lg ${
         compact
-          ? 'flex-col w-[min(82vw,280px)] shrink-0 snap-start'
+          ? 'hero-pkg-card--compact flex-row w-[min(72vw,220px)] shrink-0 snap-start'
           : 'flex-col lg:flex-row w-full'
       }`}
     >
-      <div className={`pkg-img-wrap shrink-0 ${compact ? '' : 'lg:w-[120px]'}`}>
+      <div className={`pkg-img-wrap shrink-0 ${compact ? 'w-[76px]' : 'lg:w-[120px]'}`}>
         <img src={image} alt={alt} className="pkg-img" loading="eager" />
       </div>
-      <div className="flex flex-col flex-1 p-3 sm:p-4 min-w-0">
-        <h3 className="font-semibold text-[#1f2a1d] text-sm sm:text-base leading-snug">{title}</h3>
-        <p className="text-xs text-[#4b5b47] mt-0.5">{duration}</p>
-        <p className="text-[10px] sm:text-xs text-[#4b5b47] mt-1.5 leading-relaxed line-clamp-2">
-          Includes: {inclusions.join(', ')}
-        </p>
-        <p className="text-[#336443] font-semibold text-sm sm:text-base mt-1.5">
+      <div className={`flex flex-col flex-1 min-w-0 ${compact ? 'p-2' : 'p-3 sm:p-4'}`}>
+        <h3 className={`font-semibold text-[#1f2a1d] leading-snug ${compact ? 'text-xs' : 'text-sm sm:text-base'}`}>
+          {title}
+        </h3>
+        <p className={`text-[#4b5b47] ${compact ? 'text-[10px] mt-0.5' : 'text-xs mt-0.5'}`}>{duration}</p>
+        {!compact && (
+          <p className="text-[10px] sm:text-xs text-[#4b5b47] mt-1.5 leading-relaxed line-clamp-2">
+            Includes: {inclusions.join(', ')}
+          </p>
+        )}
+        <p className={`text-[#336443] font-semibold ${compact ? 'text-[11px] mt-1' : 'text-sm sm:text-base mt-1.5'}`}>
           {priceLabel === 'ON REQUEST' ? 'ON REQUEST' : priceLabel}
         </p>
         <Link
           to={href}
-          className="mt-2.5 inline-flex items-center justify-center w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white text-btn font-semibold px-4 py-2 rounded-lg transition-colors"
+          className={`inline-flex items-center justify-center w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white font-semibold rounded-lg transition-colors ${
+            compact ? 'mt-1.5 px-2 py-1 text-[10px]' : 'mt-2.5 px-4 py-2 text-btn'
+          }`}
         >
           {cta}
         </Link>

@@ -115,6 +115,11 @@ body,
   width: 100%;
 }
 
+.hero-pkg-card--compact .pkg-img-wrap {
+  width: 76px;
+  align-self: stretch;
+}
+
 @media (min-width: 1024px) {
   .hero-pkg-card:not(.hero-pkg-card--compact) .pkg-img-wrap {
     width: 120px;
