@@ -49,9 +49,9 @@ export default function HomePage() {
                 </Link>
                 <Link
                   to="/hotels"
-                  className="btn-primary w-full sm:w-auto !bg-white !text-[#1f2a1d] hover:!bg-white/90"
+                  className="btn-primary w-full sm:w-auto !bg-white !text-[#1f2a1d] hover:!bg-gradient-to-r hover:!from-[#F97316] hover:!to-[#FB923C] hover:!text-white hover:shadow-md transition-all"
                 >
-                  Search Hotels
+                  Search
                 </Link>
               </div>
             </div>
