@@ -10,6 +10,7 @@ type HeroPackageCardProps = {
   cta: string;
   href: string;
   compact?: boolean;
+  desktopHero?: boolean;
 };
 
 export default function HeroPackageCard({
@@ -22,7 +23,32 @@ export default function HeroPackageCard({
   cta,
   href,
   compact = false,
+  desktopHero = false,
 }: HeroPackageCardProps) {
+  if (desktopHero) {
+    return (
+      <article className="hero-pkg-card hero-pkg-card--desktop flex flex-row w-full overflow-hidden rounded-lg bg-white/95 backdrop-blur-sm border border-white/40 shadow-md">
+        <div className="pkg-img-wrap shrink-0 w-[88px]">
+          <img src={image} alt={alt} className="pkg-img" loading="eager" />
+        </div>
+        <div className="flex flex-col flex-1 min-w-0 p-2.5 justify-center">
+          <h3 className="font-semibold text-[#1f2a1d] text-xs leading-snug line-clamp-1">{title}</h3>
+          <p className="text-[10px] text-[#4b5b47] mt-0.5">{duration}</p>
+          <p className="text-[9px] text-[#4b5b47] mt-1 line-clamp-1">Includes: {inclusions.join(', ')}</p>
+          <p className="text-[#336443] font-semibold text-[11px] mt-1">
+            {priceLabel === 'ON REQUEST' ? 'ON REQUEST' : priceLabel}
+          </p>
+          <Link
+            to={href}
+            className="mt-1.5 inline-flex items-center justify-center w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white font-semibold px-2 py-1 rounded-md text-[10px] transition-colors"
+          >
+            {cta}
+          </Link>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article
       className={`hero-pkg-card flex overflow-hidden rounded-xl bg-white/95 backdrop-blur-sm border border-white/40 shadow-lg ${

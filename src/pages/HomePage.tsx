@@ -4,6 +4,8 @@ import BoomerangVideoBg from '../BoomerangVideoBg';
 import HeroPackageCard from '../components/HeroPackageCard';
 import TripSearchBox from '../components/TripSearchBox';
 import OfferStrip from '../components/OfferStrip';
+import ServiceTabs from '../components/ServiceTabs';
+import PopularDestinations from '../components/PopularDestinations';
 import SectionHeader from '../components/SectionHeader';
 import { SealCheck, Timer, MapTrifold, Stamp, ShieldCheck, SlidersHorizontal } from '@phosphor-icons/react';
 import { heroPackages, trustCards, testimonials } from '../data/content';
@@ -27,21 +29,22 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
       <section className="hero-section relative w-full overflow-hidden bg-[#1f2a1d]">
         <BoomerangVideoBg src={BG_VIDEO} className="absolute inset-0 z-0 h-full w-full" poster="/images/hero-poster.webp" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/70 via-[#1f2a1d]/50 to-[#1f2a1d]/80 pointer-events-none" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/75 via-[#1f2a1d]/55 to-[#1f2a1d]/85 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8 lg:pb-14">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start lg:items-center">
-            <div className="text-left">
-              <h1 className="hero-title font-display text-hero font-semibold text-white drop-shadow-lg">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-[4.75rem] sm:pt-28 lg:pt-[7.25rem] pb-6 sm:pb-8 lg:pb-10">
+          <ServiceTabs />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-start mt-4 lg:mt-5">
+            <div className="text-left min-w-0">
+              <h1 className="hero-title font-display text-hero-compact font-semibold text-white drop-shadow-lg">
                 Plan Your Dream Holiday with Travels Mantra
               </h1>
-              <p className="text-body text-white/90 mt-4 max-w-xl leading-relaxed drop-shadow-md">
+              <p className="text-sm sm:text-body text-white/90 mt-3 max-w-xl leading-relaxed drop-shadow-md line-clamp-3 sm:line-clamp-none">
                 {HERO_SUBHEADLINE}
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-6">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4 sm:mt-5">
                 <Link to="/tours" className="btn-secondary w-full sm:w-auto">
                   Explore Packages
                 </Link>
@@ -55,19 +58,27 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="hidden lg:flex flex-col gap-3">
+            <div className="hidden lg:flex flex-col gap-2 pt-2 lg:pt-4 self-start w-full">
               {heroPackages.map((pkg) => (
-                <HeroPackageCard key={pkg.title} {...pkg} />
+                <HeroPackageCard key={pkg.title} {...pkg} desktopHero />
               ))}
             </div>
           </div>
 
-          {/* Mobile featured packages — compact horizontal cards */}
+          <div className="mt-4 lg:mt-5">
+            <PopularDestinations onDark />
+          </div>
+
           <div className="lg:hidden mt-4 pb-1">
             <p className="text-[11px] font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] mb-3">
               Featured Packages
             </p>
-            <div className="hero-pkg-scroll flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
+            <div className="hero-pkg-scroll flex flex-col gap-2.5 sm:hidden">
+              {heroPackages.map((pkg) => (
+                <HeroPackageCard key={pkg.title} {...pkg} compact />
+              ))}
+            </div>
+            <div className="hidden sm:flex hero-pkg-scroll gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
               {heroPackages.map((pkg) => (
                 <HeroPackageCard key={pkg.title} {...pkg} compact />
               ))}
@@ -76,14 +87,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Intro + hot offers — below hero (mobile + desktop) */}
-      <section className="relative z-20 pt-8 lg:pt-14 pb-8 sm:pb-10 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
+      <section className="relative z-20 pt-8 lg:pt-10 pb-8 sm:pb-10 bg-[#FAFAFA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <OfferStrip />
         </div>
       </section>
 
-      {/* Trust cards */}
       <section className="py-10 sm:py-14 bg-[#FAFAFA] border-t border-[#E5E5E5]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -106,15 +115,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Search + testimonials */}
-      <section className="py-14 sm:py-20 bg-white pb-24 sm:pb-20">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hero-search-panel rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-3 sm:p-4 lg:p-6 mb-10 sm:mb-12 lg:mb-14">
-            <TripSearchBox />
-          </div>
-
           <SectionHeader label="Traveller Stories" title="What our travellers say" />
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.map((t) => (
               <blockquote key={t.trip} className="card-equal p-6 rounded-2xl border border-[#E5E5E5] bg-[#FAFAFA]">
@@ -131,6 +134,14 @@ export default function HomePage() {
                 </footer>
               </blockquote>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 sm:py-14 bg-white pb-24 sm:pb-20 border-t border-[#E5E5E5]/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="hero-search-panel rounded-xl sm:rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-3 sm:p-4 lg:p-6 max-w-4xl mx-auto">
+            <TripSearchBox />
           </div>
         </div>
       </section>

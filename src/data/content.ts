@@ -314,4 +314,29 @@ export const budgetOptions = [
   'Flexible / ON REQUEST',
 ];
 
-export const chatbotChips = ['Bali', 'Dubai', 'Vietnam', 'Baku', 'Tashkent', 'Visa Help', 'Build My Package'];
+export const chatbotChips = ['Dubai', 'Bali', 'Tashkent', 'Baku', 'Visa Help', 'Build My Package'] as const;
+
+export const serviceTabs = [
+  { id: 'tours', label: 'Tours', href: '/tours' },
+  { id: 'holiday', label: 'Holiday Packages', href: '/tours' },
+  { id: 'offers', label: 'Hot Offers', href: '/offers' },
+  { id: 'visa', label: 'Visa', href: '/visa' },
+  { id: 'insurance', label: 'Travel Insurance', href: '/insurance' },
+  { id: 'flights', label: 'Flights', href: '/contact' },
+  { id: 'hotels', label: 'Hotels', href: '/contact' },
+  { id: 'build', label: 'Build Your Package', href: '/build-package' },
+  { id: 'excursions', label: 'Excursions', href: '/excursions' },
+] as const;
+
+export const popularDestinations = [
+  { name: 'Dubai', image: '/images/dubai-tour-package.webp', alt: 'Dubai tours and packages' },
+  { name: 'Bali', image: '/images/bali-indonesia-tour.webp', alt: 'Bali tours and packages' },
+  { name: 'Thailand', image: '/images/destination-asia.webp', alt: 'Thailand tours and packages' },
+  { name: 'Vietnam', image: '/images/vietnam-tour-package.webp', alt: 'Vietnam tours and packages' },
+  { name: 'Baku', image: '/images/baku-tour-package.webp', alt: 'Baku tours and packages' },
+  { name: 'Tashkent', image: '/images/tashkent-tour-package.webp', alt: 'Tashkent tours and packages' },
+  { name: 'Almaty', image: '/images/almaty-tour-package.webp', alt: 'Almaty tours and packages' },
+  { name: 'Bishkek', image: '/images/bishkek-tour-package.webp', alt: 'Bishkek tours and packages' },
+  { name: 'Singapore', image: '/images/singapore-cruise-package.webp', alt: 'Singapore tours and packages' },
+  { name: 'Maldives', image: '/images/dubai-tour-package.webp', alt: 'Maldives tours and packages' },
+] as const;
