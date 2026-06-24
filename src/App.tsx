@@ -10,12 +10,16 @@ import BuildPackagePage from './pages/BuildPackagePage';
 import InsurancePage from './pages/InsurancePage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import HotelsPage from './pages/HotelsPage';
+import HotelResultsPage from './pages/HotelResultsPage';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="hotels" element={<HotelsPage />} />
+        <Route path="hotels/results" element={<HotelResultsPage />} />
         <Route path="tours" element={<ToursPage />} />
         <Route path="excursions" element={<ExcursionsPage />} />
         <Route path="about" element={<AboutPage />} />

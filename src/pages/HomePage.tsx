@@ -36,12 +36,11 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-[4.75rem] sm:pt-28 lg:pt-[7.25rem] pb-6 sm:pb-8 lg:pb-10">
           <ServiceTabs />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-start mt-4 lg:mt-5">
-            <div className="text-left min-w-0">
+          <div className="mt-4 lg:mt-5 max-w-xl text-left min-w-0">
               <h1 className="hero-title font-display text-hero-compact font-semibold text-white drop-shadow-lg">
                 Plan Your Dream Holiday with Travels Mantra
               </h1>
-              <p className="text-sm sm:text-body text-white/90 mt-3 max-w-xl leading-relaxed drop-shadow-md line-clamp-3 sm:line-clamp-none">
+              <p className="text-sm sm:text-body text-white/90 mt-3 leading-relaxed drop-shadow-md line-clamp-3 sm:line-clamp-none">
                 {HERO_SUBHEADLINE}
               </p>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4 sm:mt-5">
@@ -49,35 +48,16 @@ export default function HomePage() {
                   Explore Packages
                 </Link>
                 <Link
-                  to="/"
-                  state={{ scrollToEnquiry: true }}
+                  to="/hotels"
                   className="btn-primary w-full sm:w-auto !bg-white !text-[#1f2a1d] hover:!bg-white/90"
                 >
-                  Get Free Trip Plan
+                  Search Hotels
                 </Link>
               </div>
             </div>
 
-            <div className="hidden lg:flex flex-col gap-2 pt-2 lg:pt-4 self-start w-full">
-              {heroPackages.map((pkg) => (
-                <HeroPackageCard key={pkg.title} {...pkg} desktopHero />
-              ))}
-            </div>
-          </div>
-
           <div className="mt-4 lg:mt-5">
             <PopularDestinations onDark />
-          </div>
-
-          <div className="lg:hidden mt-4 pb-1">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] mb-3">
-              Featured Packages
-            </p>
-            <div className="hero-pkg-scroll flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
-              {heroPackages.map((pkg) => (
-                <HeroPackageCard key={pkg.title} {...pkg} slider />
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -85,6 +65,18 @@ export default function HomePage() {
       <section className="relative z-20 pt-8 lg:pt-10 pb-8 sm:pb-10 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <OfferStrip />
+
+          <div className="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-[#E5E5E5]/60">
+            <div className="mb-4">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#85AB8B] mb-1">Handpicked</p>
+              <h2 className="text-lg sm:text-xl font-display font-semibold text-[#1f2a1d]">Featured Packages</h2>
+            </div>
+            <div className="hero-pkg-scroll flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
+              {heroPackages.map((pkg) => (
+                <HeroPackageCard key={pkg.title} {...pkg} slider />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

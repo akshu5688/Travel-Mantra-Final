@@ -323,7 +323,7 @@ export const serviceTabs = [
   { id: 'visa', label: 'Visa', href: '/visa' },
   { id: 'insurance', label: 'Travel Insurance', href: '/insurance' },
   { id: 'flights', label: 'Flights', href: '/contact' },
-  { id: 'hotels', label: 'Hotels', href: '/contact' },
+  { id: 'hotels', label: 'Hotels', href: '/hotels' },
   { id: 'build', label: 'Build Your Package', href: '/build-package' },
   { id: 'excursions', label: 'Excursions', href: '/excursions' },
 ] as const;
