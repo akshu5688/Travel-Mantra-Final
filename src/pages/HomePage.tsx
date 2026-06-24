@@ -73,14 +73,9 @@ export default function HomePage() {
             <p className="text-[11px] font-bold uppercase tracking-widest text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] mb-3">
               Featured Packages
             </p>
-            <div className="hero-pkg-scroll flex flex-col gap-2.5 sm:hidden">
+            <div className="hero-pkg-scroll flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
               {heroPackages.map((pkg) => (
-                <HeroPackageCard key={pkg.title} {...pkg} compact />
-              ))}
-            </div>
-            <div className="hidden sm:flex hero-pkg-scroll gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
-              {heroPackages.map((pkg) => (
-                <HeroPackageCard key={pkg.title} {...pkg} compact />
+                <HeroPackageCard key={pkg.title} {...pkg} slider />
               ))}
             </div>
           </div>

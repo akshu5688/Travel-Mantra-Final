@@ -11,6 +11,7 @@ type HeroPackageCardProps = {
   href: string;
   compact?: boolean;
   desktopHero?: boolean;
+  slider?: boolean;
 };
 
 export default function HeroPackageCard({
@@ -24,7 +25,31 @@ export default function HeroPackageCard({
   href,
   compact = false,
   desktopHero = false,
+  slider = false,
 }: HeroPackageCardProps) {
+  if (slider) {
+    return (
+      <article className="hero-pkg-card hero-pkg-card--slider shrink-0 snap-start w-[min(78vw,260px)] flex flex-col overflow-hidden rounded-xl bg-white/95 backdrop-blur-sm border border-white/40 shadow-lg">
+        <div className="h-28 overflow-hidden shrink-0">
+          <img src={image} alt={alt} className="w-full h-full object-cover" loading="eager" />
+        </div>
+        <div className="flex flex-col flex-1 p-3">
+          <h3 className="font-semibold text-[#1f2a1d] text-sm leading-snug line-clamp-2">{title}</h3>
+          <p className="text-xs text-[#4b5b47] mt-1">{duration}</p>
+          <p className="text-[#336443] font-semibold text-xs mt-1.5">
+            {priceLabel === 'ON REQUEST' ? 'ON REQUEST' : priceLabel}
+          </p>
+          <Link
+            to={href}
+            className="mt-3 inline-flex items-center justify-center w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors"
+          >
+            {cta}
+          </Link>
+        </div>
+      </article>
+    );
+  }
+
   if (desktopHero) {
     return (
       <article className="hero-pkg-card hero-pkg-card--desktop flex flex-row w-full overflow-hidden rounded-lg bg-white/95 backdrop-blur-sm border border-white/40 shadow-md">
