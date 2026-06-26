@@ -395,13 +395,15 @@ body,
 .nav-mobile-welcome {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex: 1;
   min-width: 0;
+  text-align: center;
 }
 
 .nav-mobile-welcome__tagline {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  max-width: 100%;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.125rem;
   font-weight: 600;
@@ -411,6 +413,7 @@ body,
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 .nav-mobile-welcome--dark .nav-mobile-welcome__tagline {
