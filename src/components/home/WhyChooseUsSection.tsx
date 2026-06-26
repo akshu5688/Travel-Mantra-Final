@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   SealCheck,
   Certificate,
@@ -14,7 +15,10 @@ import { trustCards } from '../../data/content';
 
 const trustIcons = [SealCheck, Certificate, ShareNetwork, CurrencyCircleDollar, Globe, Users, Star, Headset, SlidersHorizontal];
 
-export default function WhyChooseUsSection() {
+export default function WhyChooseUsSection({ limit }: { limit?: number }) {
+  const cards = limit ? trustCards.slice(0, limit) : trustCards;
+  const icons = limit ? trustIcons.slice(0, limit) : trustIcons;
+
   return (
     <section className="py-14 sm:py-20 bg-[#FAFAFA] border-t border-[#E5E5E5]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,8 +28,8 @@ export default function WhyChooseUsSection() {
           subtitle="Destination Specialists, Not Just Travel Planners"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {trustCards.map((card, i) => {
-            const Icon = trustIcons[i];
+          {cards.map((card, i) => {
+            const Icon = icons[i];
             return (
               <div
                 key={card.title}
@@ -40,6 +44,13 @@ export default function WhyChooseUsSection() {
             );
           })}
         </div>
+        {limit && (
+          <div className="text-center mt-8">
+            <Link to="/about-us" className="text-sm font-semibold text-[#336443] hover:text-[#1f2a1d]">
+              Learn more about Travels Mantra →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

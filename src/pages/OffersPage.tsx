@@ -29,7 +29,7 @@ export default function OffersPage() {
                     <Link to={dest.href} className="btn-primary w-full text-center min-h-[44px]">
                       View Package
                     </Link>
-                    <Link to="/" state={{ scrollToEnquiry: true }} className="btn-outline w-full text-center min-h-[44px]">
+                    <Link to="/build-your-package" className="btn-outline w-full text-center min-h-[44px]">
                       Send Enquiry
                     </Link>
                   </div>

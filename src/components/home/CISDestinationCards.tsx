@@ -2,7 +2,13 @@ import { Link } from 'react-router-dom';
 import SectionHeader from '../SectionHeader';
 import { cisDestinations } from '../../data/content';
 
-export default function CISDestinationCards() {
+type CISDestinationCardsProps = {
+  limit?: number;
+  viewAllHref?: string;
+};
+
+export default function CISDestinationCards({ limit, viewAllHref }: CISDestinationCardsProps) {
+  const destinations = limit ? cisDestinations.slice(0, limit) : cisDestinations;
   return (
     <section className="py-14 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +18,7 @@ export default function CISDestinationCards() {
           subtitle="Explore Uzbekistan, Kazakhstan, Azerbaijan, Kyrgyzstan, and the Caucasus with specialist tour packages."
         />
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-5">
-          {cisDestinations.map((dest) => (
+          {destinations.map((dest) => (
             <article
               key={dest.name}
               className="card-equal flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#85AB8B]/50 hover:shadow-lg transition-all"
@@ -32,7 +38,7 @@ export default function CISDestinationCards() {
           ))}
         </div>
         <div className="sm:hidden dest-scroll flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-1 -mx-1 px-1">
-          {cisDestinations.map((dest) => (
+          {destinations.map((dest) => (
             <article
               key={dest.name}
               className="card-equal shrink-0 snap-start w-[min(78vw,280px)] flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E5E5E5]"
@@ -51,6 +57,13 @@ export default function CISDestinationCards() {
             </article>
           ))}
         </div>
+        {viewAllHref && (
+          <div className="text-center mt-10">
+            <Link to={viewAllHref} className="btn-outline min-h-[44px]">
+              View All CIS Destinations
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

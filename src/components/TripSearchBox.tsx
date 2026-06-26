@@ -119,8 +119,7 @@ export default function TripSearchBox({ compact = false, defaultTab = 'packages'
               </div>
               <div className="col-span-1 sm:col-span-2 lg:col-span-5 flex items-end">
                 <Link
-                  to="/"
-                  state={{ scrollToEnquiry: true }}
+              to="/build-your-package"
                   className="btn-secondary trip-search-submit w-full min-h-[44px] text-center"
                 >
                   Find Your Perfect Trip

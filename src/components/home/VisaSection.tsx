@@ -5,15 +5,21 @@ import { visaServices } from '../../data/content';
 
 const visaIcons = [Stamp, FileText, ListChecks, GlobeHemisphereWest, Package, ShieldCheck];
 
-export default function VisaSection() {
+type VisaSectionProps = {
+  hideHeader?: boolean;
+};
+
+export default function VisaSection({ hideHeader = false }: VisaSectionProps) {
   return (
     <section id="visa" className="py-14 sm:py-20 bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          label="Visa"
-          title="Central Asia Visa Assistance"
-          subtitle="Get LOI, tourist visa guidance, document checklist, and country-wise visa support for Central Asian travel."
-        />
+        {!hideHeader && (
+          <SectionHeader
+            label="Visa"
+            title="Central Asia Visa Assistance"
+            subtitle="Get LOI, tourist visa guidance, document checklist, and country-wise visa support for Central Asian travel."
+          />
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {visaServices.map((service, i) => {
             const Icon = visaIcons[i];
@@ -35,7 +41,7 @@ export default function VisaSection() {
           <p className="text-sm sm:text-base leading-relaxed text-white/90">
             Travels Mantra provides full Letter of Invitation and visa assistance for Central Asian countries.
           </p>
-          <Link to="/visa" className="btn-secondary shrink-0 w-full sm:w-auto text-center min-h-[44px]">
+          <Link to="/build-your-package" className="btn-secondary shrink-0 w-full sm:w-auto text-center min-h-[44px]">
             Get Visa Help
           </Link>
         </div>

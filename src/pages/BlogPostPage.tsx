@@ -24,7 +24,7 @@ export default function BlogPostPage() {
             Contact our team for a customized itinerary.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-8">
-            <Link to="/" state={{ scrollToEnquiry: true }} className="btn-secondary text-center min-h-[44px]">
+            <Link to="/build-your-package" className="btn-secondary text-center min-h-[44px]">
               Get Free Trip Plan
             </Link>
             <Link to="/blog" className="btn-outline text-center min-h-[44px]">

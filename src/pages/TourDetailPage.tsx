@@ -89,7 +89,7 @@ export default function TourDetailPage() {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                <Link to="/" state={{ scrollToEnquiry: true }} className="btn-secondary flex-1 text-center min-h-[44px]">
+                <Link to="/build-your-package" className="btn-secondary flex-1 text-center min-h-[44px]">
                   Send Enquiry
                 </Link>
                 <Link to="/contact-us" className="btn-outline flex-1 text-center min-h-[44px]">

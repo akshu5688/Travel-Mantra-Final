@@ -15,6 +15,7 @@ import {
   Baby,
   Wheelchair,
 } from '@phosphor-icons/react';
+import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import PageBanner from '../components/PageBanner';
 import SectionHeader from '../components/SectionHeader';
 import {
@@ -84,8 +85,7 @@ export default function AboutPage() {
                 .
               </p>
               <Link
-                to="/"
-                state={{ scrollToEnquiry: true }}
+                to="/build-your-package"
                 className="btn-primary w-full sm:w-auto text-center inline-flex justify-center min-h-[44px]"
               >
                 Get Free Trip Plan
@@ -95,9 +95,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <WhyChooseUsSection />
+
       <section className="py-14 sm:py-20 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader label="Services" title="Set of Our Services" subtitle={aboutServicesSummary} />
+          <SectionHeader label="Services" title="Our Central Asia Travel Services" subtitle={aboutServicesSummary} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {travelServices.map((service, i) => {
               const Icon = serviceIcons[i];
@@ -212,8 +214,7 @@ export default function AboutPage() {
               Book Tour Now
             </Link>
             <Link
-              to="/"
-              state={{ scrollToEnquiry: true }}
+              to="/build-your-package"
               className="btn-primary min-h-[44px] !bg-white !text-[#1f2a1d] hover:!bg-[#85AB8B] hover:!text-white"
             >
               Get Free Trip Plan

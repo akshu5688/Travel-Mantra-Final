@@ -127,8 +127,7 @@ export default function Layout() {
           </div>
 
           <Link
-            to="/"
-            state={{ scrollToEnquiry: true }}
+            to="/build-your-package"
             className={`hidden xl:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
               !showSolidNav ? '!bg-white !text-[#1f2a1d] hover:!bg-white/90' : ''
             }`}
@@ -219,7 +218,7 @@ export default function Layout() {
               </Link>
             ),
           )}
-          <Link to="/" state={{ scrollToEnquiry: true }} onClick={closeMenu} className="btn-primary w-full mt-6 text-center">
+          <Link to="/build-your-package" onClick={closeMenu} className="btn-primary w-full mt-6 text-center">
             Get Free Trip Plan
           </Link>
         </div>

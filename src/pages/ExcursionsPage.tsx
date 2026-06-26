@@ -24,7 +24,7 @@ export default function ExcursionsPage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#85AB8B]">{exc.region}</span>
                   <h3 className="text-card-title font-semibold text-white mt-2">{exc.title}</h3>
                   <p className="text-sm text-white/65 mt-2 leading-relaxed flex-1">{exc.desc}</p>
-                  <Link to="/contact" className="inline-block mt-4 text-sm font-semibold text-[#85AB8B] hover:text-white transition-colors">
+                  <Link to="/contact-us" className="inline-block mt-4 text-sm font-semibold text-[#85AB8B] hover:text-white transition-colors">
                     Enquire Now →
                   </Link>
                 </div>

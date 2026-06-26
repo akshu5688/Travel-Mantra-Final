@@ -1,17 +1,24 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CaretDown } from '@phosphor-icons/react';
 import SectionHeader from '../SectionHeader';
 import { faqItems } from '../../data/content';
 
-export default function FAQSection() {
+type FAQSectionProps = {
+  limit?: number;
+  viewAllHref?: string;
+};
+
+export default function FAQSection({ limit, viewAllHref }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const items = limit ? faqItems.slice(0, limit) : faqItems;
 
   return (
     <section id="faq" className="py-14 sm:py-20 bg-[#FAFAFA]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about Central Asia tours, visas, and packages." />
         <div className="space-y-3 -mt-4">
-          {faqItems.map((item, i) => {
+          {items.map((item, i) => {
             const isOpen = openIndex === i;
             return (
               <div key={item.question} className="rounded-2xl border border-[#E5E5E5] bg-white overflow-hidden">
@@ -37,6 +44,13 @@ export default function FAQSection() {
             );
           })}
         </div>
+        {viewAllHref && faqItems.length > items.length && (
+          <div className="text-center mt-8">
+            <Link to={viewAllHref} className="btn-outline min-h-[44px]">
+              View All FAQs & Contact Us
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

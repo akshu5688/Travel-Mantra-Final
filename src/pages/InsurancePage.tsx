@@ -42,7 +42,7 @@ export default function InsurancePage() {
             <p className="text-body text-[#4b5b47] mb-6 max-w-xl mx-auto">
               Get complimentary insurance guidance with any package booking from Travels Mantra.
             </p>
-            <Link to="/contact" className="btn-primary">Get Insurance Help</Link>
+            <Link to="/contact-us" className="btn-primary min-h-[44px]">Get Insurance Help</Link>
           </div>
         </div>
       </section>
