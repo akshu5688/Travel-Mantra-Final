@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SealCheck } from '@phosphor-icons/react';
 import BoomerangVideoBg from '../BoomerangVideoBg';
 import ServiceTabs from '../components/ServiceTabs';
+import WhatWeProvideSection from '../components/home/WhatWeProvideSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import { heroTrustBadges, heroTrustCopy } from '../data/content';
 
@@ -70,6 +71,7 @@ export default function HomePage() {
           </div>
         </div>
 
+        <WhatWeProvideSection variant="hero" />
         <WhyChooseUsSection variant="hero" limit={6} />
       </div>
     </section>

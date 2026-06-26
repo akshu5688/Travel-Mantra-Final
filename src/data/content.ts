@@ -233,6 +233,37 @@ export const trustCards = [
 
 export const inclusionBadges = ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport', 'Insurance'] as const;
 
+export const whatWeProvideSummary =
+  'Every Central Asia package includes end-to-end support — from visa and flights to on-ground guides and 24×7 assistance when you need us.';
+
+export const whatWeProvideItems = [
+  {
+    title: '24×7 Travel Assistance',
+    desc: 'Round-the-clock phone and WhatsApp support before, during, and after your trip.',
+    highlight: true,
+  },
+  {
+    title: 'Visa & LOI Support',
+    desc: 'Letter of invitation, document checklists, and full visa guidance as Uzbekistan Tourism partner.',
+  },
+  {
+    title: 'Flights & Hotels',
+    desc: 'Air ticket booking, hotel reservations, and airport transfers on arrival and departure.',
+  },
+  {
+    title: 'Sightseeing & Local Guides',
+    desc: 'Curated tours with Hindi-speaking guides, private transport, and city experiences.',
+  },
+  {
+    title: 'Meals & Travel Insurance',
+    desc: 'Food arrangements in packages plus optional travel insurance for complete peace of mind.',
+  },
+  {
+    title: 'Custom & Fixed Departures',
+    desc: 'Tailor-made itineraries or ready fixed-departure packages — built around your dates and budget.',
+  },
+] as const;
+
 export const cisDestinations = [
   {
     name: 'Tashkent',
