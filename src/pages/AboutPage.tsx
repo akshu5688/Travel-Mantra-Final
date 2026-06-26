@@ -16,14 +16,18 @@ import {
   Wheelchair,
 } from '@phosphor-icons/react';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
+import TestimonialsSection from '../components/home/TestimonialsSection';
 import PageBanner from '../components/PageBanner';
 import SectionHeader from '../components/SectionHeader';
+import { SealCheck } from '@phosphor-icons/react';
 import {
   aboutFeaturedArticles,
   aboutHighlights,
   aboutServicesSummary,
   aboutTravelTips,
   aboutUsIntro,
+  heroTrustBadges,
+  heroTrustCopy,
   travelServices,
   UZBEKISTAN_TOURISM_BOARD_URL,
 } from '../data/content';
@@ -66,7 +70,19 @@ export default function AboutPage() {
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-3">
                 {aboutUsIntro.certification}
               </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {heroTrustBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-[#336443] bg-[#336443]/10 border border-[#336443]/20 px-2.5 py-1.5 rounded-full"
+                  >
+                    <SealCheck size={14} weight="fill" className="text-[#336443] shrink-0" />
+                    {badge}
+                  </span>
+                ))}
+              </div>
               <h2 className="text-section-title font-semibold text-[#336443] mb-6">{aboutUsIntro.companyName}</h2>
+              <p className="text-body text-[#4b5b47] mb-4 leading-relaxed">{heroTrustCopy}</p>
               {aboutUsIntro.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 40)} className="text-body text-[#4b5b47] mb-4 leading-relaxed">
                   {paragraph}
@@ -96,6 +112,7 @@ export default function AboutPage() {
       </section>
 
       <WhyChooseUsSection />
+      <TestimonialsSection />
 
       <section className="py-14 sm:py-20 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

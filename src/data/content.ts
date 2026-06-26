@@ -701,11 +701,11 @@ export const footerCompany = [
   { label: 'About Us', href: '/about-us' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact-us' },
-  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'Testimonials', href: '/about-us#testimonials' },
 ];
 
 export const footerSupport = [
-  { label: 'FAQ', href: '/#faq' },
+  { label: 'FAQ', href: '/contact-us#faq' },
   { label: 'Policies', href: '/contact-us' },
   { label: 'Cancellation Policy', href: '/contact-us' },
   { label: 'Privacy Policy', href: '/contact-us' },
