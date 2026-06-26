@@ -393,28 +393,45 @@ body,
 .brand-logo--on-dark .brand-mantra em { color: #85AB8B; }
 
 .nav-mobile-welcome {
-  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
 }
 
 .nav-mobile-welcome__tagline {
   display: block;
+  width: 100%;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   font-weight: 600;
   font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-mobile-welcome--dark .nav-mobile-welcome__tagline {
   color: #85AB8B;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .nav-mobile-welcome--solid .nav-mobile-welcome__tagline {
   color: #336443;
 }
 
+@media (min-width: 390px) {
+  .nav-mobile-welcome__tagline {
+    font-size: 1.25rem;
+  }
+}
+
 @media (min-width: 640px) {
   .nav-mobile-welcome__tagline {
-    font-size: 0.9375rem;
+    font-size: 1.375rem;
+    letter-spacing: 0.02em;
   }
 }
 

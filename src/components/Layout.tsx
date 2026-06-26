@@ -102,9 +102,9 @@ export default function Layout() {
             <span className="brand-mantra"><em>M</em>antra</span>
           </Link>
 
-          <div className="flex md:hidden flex-1 min-w-0 px-2.5 sm:px-3">
+          <div className="flex md:hidden flex-1 min-w-0 items-center pl-2 pr-1">
             <p
-              className={`nav-mobile-welcome leading-tight ${
+              className={`nav-mobile-welcome w-full min-w-0 ${
                 showSolidNav ? 'nav-mobile-welcome--solid' : 'nav-mobile-welcome--dark'
               }`}
             >
