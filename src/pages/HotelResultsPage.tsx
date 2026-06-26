@@ -7,7 +7,7 @@ import HotelCard from '../components/hotels/HotelCard';
 import HotelMap from '../components/hotels/HotelMap';
 import { getCityCenter, getHotelsByCity } from '../data/hotels';
 import type { HotelFilters, SortOption } from '../types/hotel';
-import { filterHotels, parseSearchParams, sortHotels } from '../utils/hotelSearch';
+import { filterHotels, matchesCustomBudget, parseSearchParams, sortHotels } from '../utils/hotelSearch';
 
 const SORT_TABS: { id: SortOption; label: string }[] = [
   { id: 'popularity', label: 'Popularity' },
@@ -23,7 +23,7 @@ export default function HotelResultsPage() {
 
   const cityHotels = useMemo(() => getHotelsByCity(search.city), [search.city]);
   const mapCenter = useMemo(
-    () => getCityCenter(search.city) || { lat: 15.2993, lng: 74.124 },
+    () => getCityCenter(search.city) || { lat: 41.2995, lng: 69.2401 },
     [search.city],
   );
 
@@ -40,10 +40,11 @@ export default function HotelResultsPage() {
   const [locating, setLocating] = useState(false);
   const [showTips, setShowTips] = useState(false);
 
-  const filtered = useMemo(
-    () => filterHotels(cityHotels, filters),
-    [cityHotels, filters],
-  );
+  const filtered = useMemo(() => {
+    const base = filterHotels(cityHotels, filters);
+    if (search.budgetMin == null && search.budgetMax == null) return base;
+    return base.filter((h) => matchesCustomBudget(h.price, search.budgetMin, search.budgetMax));
+  }, [cityHotels, filters, search.budgetMin, search.budgetMax]);
   const results = useMemo(
     () => sortHotels(filtered, sort, userLocation),
     [filtered, sort, userLocation],

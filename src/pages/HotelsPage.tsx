@@ -12,7 +12,7 @@ export default function HotelsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1f2a1d]/80 via-[#1f2a1d]/70 to-[#1f2a1d]/90" aria-hidden />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="hero-search-panel rounded-xl sm:rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-4 sm:p-5 lg:p-6">
+          <div className="hero-search-panel rounded-xl sm:rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-4 sm:p-5 lg:p-6 overflow-visible">
             <TripSearchBox defaultTab="hotels" />
           </div>
         </div>

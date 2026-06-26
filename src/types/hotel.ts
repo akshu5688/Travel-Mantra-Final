@@ -81,13 +81,23 @@ export const TRENDING_CITIES = [
   { city: 'Bishkek', country: 'Kyrgyzstan' },
 ];
 
-export const HOTEL_CITIES = [
-  'Tashkent',
-  'Samarkand',
-  'Bukhara',
-  'Almaty',
-  'Baku',
-  'Bishkek',
-  'Delhi',
-  'Moscow',
+export const HOTEL_DESTINATIONS = [
+  { city: 'Tashkent', country: 'Uzbekistan' },
+  { city: 'Samarkand', country: 'Uzbekistan' },
+  { city: 'Bukhara', country: 'Uzbekistan' },
+  { city: 'Almaty', country: 'Kazakhstan' },
+  { city: 'Astana', country: 'Kazakhstan' },
+  { city: 'Baku', country: 'Azerbaijan' },
+  { city: 'Bishkek', country: 'Kyrgyzstan' },
+  { city: 'Georgia', country: 'Georgia' },
+  { city: 'Armenia', country: 'Armenia' },
+  { city: 'Moscow', country: 'Russia' },
+  { city: 'Delhi', country: 'India' },
+  { city: 'Turkey', country: 'Turkey' },
 ] as const;
+
+export const HOTEL_CITIES = HOTEL_DESTINATIONS.map((d) => d.city);
+
+export const HOTEL_CITY_COUNTRY: Record<string, string> = Object.fromEntries(
+  HOTEL_DESTINATIONS.map((d) => [d.city, d.country]),
+);

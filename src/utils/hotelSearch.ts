@@ -146,6 +146,8 @@ export function buildResultsSearchParams(params: {
   adults: number;
   children: number;
   budgetRanges?: PriceRangeId[];
+  budgetMin?: number | null;
+  budgetMax?: number | null;
 }): string {
   const sp = new URLSearchParams();
   sp.set('city', params.city);
@@ -157,18 +159,34 @@ export function buildResultsSearchParams(params: {
   if (params.budgetRanges?.length) {
     sp.set('budget', params.budgetRanges.join(','));
   }
+  if (params.budgetMin != null && params.budgetMin > 0) {
+    sp.set('budgetMin', String(params.budgetMin));
+  }
+  if (params.budgetMax != null && params.budgetMax > 0) {
+    sp.set('budgetMax', String(params.budgetMax));
+  }
   return sp.toString();
 }
 
 export function parseSearchParams(searchParams: URLSearchParams) {
   const budget = searchParams.get('budget');
+  const budgetMin = searchParams.get('budgetMin');
+  const budgetMax = searchParams.get('budgetMax');
   return {
-    city: searchParams.get('city') || 'Goa',
+    city: searchParams.get('city') || 'Tashkent',
     checkIn: searchParams.get('checkIn') || defaultCheckIn(),
     checkOut: searchParams.get('checkOut') || defaultCheckOut(),
     rooms: Math.max(1, Number(searchParams.get('rooms')) || 1),
     adults: Math.max(1, Number(searchParams.get('adults')) || 2),
     children: Math.max(0, Number(searchParams.get('children')) || 0),
     budgetRanges: (budget ? budget.split(',') : []) as PriceRangeId[],
+    budgetMin: budgetMin ? Math.max(0, Number(budgetMin)) : null,
+    budgetMax: budgetMax ? Math.max(0, Number(budgetMax)) : null,
   };
+}
+
+export function matchesCustomBudget(price: number, budgetMin: number | null, budgetMax: number | null): boolean {
+  if (budgetMin != null && budgetMin > 0 && price < budgetMin) return false;
+  if (budgetMax != null && budgetMax > 0 && price > budgetMax) return false;
+  return true;
 }

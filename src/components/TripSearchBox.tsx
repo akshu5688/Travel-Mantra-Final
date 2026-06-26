@@ -29,7 +29,7 @@ export default function TripSearchBox({ compact = false, defaultTab = 'packages'
   const preview = getLocationImage(selectedDestination);
 
   return (
-    <div className="trip-search w-full">
+    <div className="trip-search w-full overflow-visible">
       <div className="trip-search-tabs flex gap-1 mb-4 p-1 bg-[#FAFAFA] rounded-xl border border-[#E5E5E5] w-full sm:w-fit">
         <button
           type="button"
