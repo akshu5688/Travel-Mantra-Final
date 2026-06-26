@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { CaretDown, Fire, List, X } from '@phosphor-icons/react';
 import Footer from './Footer';
 import Chatbot from './Chatbot';
-import { navLinks } from '../data/content';
+import { navLinks, serviceTabs } from '../data/content';
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,7 +84,7 @@ export default function Layout() {
             <span className="brand-mantra"><em>M</em>antra</span>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-0.5 flex-1 justify-center max-w-5xl mx-4">
+          <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center max-w-5xl mx-4">
             {navLinks.map((link) =>
               link.hot ? (
                 <div key={link.href} ref={hotOffersRef} className="relative">
@@ -128,7 +128,7 @@ export default function Layout() {
 
           <Link
             to="/build-your-package"
-            className={`hidden xl:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
+            className={`hidden lg:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
               !showSolidNav ? '!bg-white !text-[#1f2a1d] hover:!bg-white/90' : ''
             }`}
           >
@@ -137,7 +137,7 @@ export default function Layout() {
 
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className={`xl:hidden relative flex items-center justify-center w-11 h-11 rounded-full backdrop-blur-md border transition-all ${
+            className={`lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full backdrop-blur-md border transition-all ${
               showSolidNav
                 ? 'bg-white border-[#E5E5E5] text-[#1f2a1d]'
                 : 'bg-white/20 border-white/30 text-white'
@@ -152,18 +152,19 @@ export default function Layout() {
       </nav>
 
       <div
-        className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={closeMenu}
       >
         <div className="absolute inset-0 bg-[#1f2a1d]/50 backdrop-blur-sm" />
       </div>
 
       <div
-        className={`xl:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(88vw,360px)] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(92vw,380px)] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col h-full pt-20 px-6 pb-8 overflow-y-auto">
+        <div className="flex flex-col h-full pt-20 px-5 sm:px-6 pb-8 overflow-y-auto">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-3">Menu</p>
           {navLinks.map((link, i) =>
             link.hot ? (
               <div
@@ -218,7 +219,39 @@ export default function Layout() {
               </Link>
             ),
           )}
-          <Link to="/build-your-package" onClick={closeMenu} className="btn-primary w-full mt-6 text-center">
+
+          <div
+            className={`mt-6 pt-6 border-t border-[#E5E5E5] transition-all ${
+              menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
+            }`}
+            style={{ transitionDelay: menuOpen ? `${100 + navLinks.length * 50}ms` : '0ms' }}
+          >
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-3">Our Services</p>
+            <div className="grid grid-cols-2 gap-2">
+              {serviceTabs.map((tab) => (
+                <Link
+                  key={tab.id}
+                  to={tab.href}
+                  onClick={closeMenu}
+                  className="text-xs font-semibold text-[#1f2a1d] bg-[#FAFAFA] border border-[#E5E5E5] hover:border-[#85AB8B]/50 rounded-lg px-3 py-2.5 min-h-[44px] flex items-center"
+                >
+                  {tab.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link
+            to="/search"
+            onClick={closeMenu}
+            className={`btn-outline w-full mt-4 text-center min-h-[44px] ${
+              menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
+            }`}
+            style={{ transitionDelay: menuOpen ? `${150 + navLinks.length * 50}ms` : '0ms' }}
+          >
+            Search Packages & Hotels
+          </Link>
+          <Link to="/build-your-package" onClick={closeMenu} className="btn-primary w-full mt-3 text-center min-h-[44px]">
             Get Free Trip Plan
           </Link>
         </div>

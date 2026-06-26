@@ -667,6 +667,13 @@ export const testimonials = [
   },
 ];
 
+export const experienceStats = [
+  { value: '25,000+', label: 'Happy Travelers' },
+  { value: '4.8★', label: 'Customer Rating' },
+  { value: '17+', label: 'Years Experience' },
+  { value: '24×7', label: 'Travel Support' },
+] as const;
+
 export { blogPosts } from './blogs';
 
 export const enquiryDestinations = [
@@ -699,7 +706,7 @@ export const serviceTabs = [
   { id: 'tours', label: 'Central Asia Tours', href: '/tours' },
   { id: 'cis', label: 'CIS Packages', href: '/tours' },
   { id: 'visa', label: 'Visa Support', href: '/visa' },
-  { id: 'hotels', label: 'Hotels', href: '/hotels' },
+  { id: 'hotels', label: 'Hotels', href: '/search?tab=hotels' },
   { id: 'fixed', label: 'Fixed Departures', href: '/hot-offers' },
   { id: 'insurance', label: 'Travel Insurance', href: '/travel-insurance' },
   { id: 'build', label: 'Build Your Package', href: '/build-your-package' },

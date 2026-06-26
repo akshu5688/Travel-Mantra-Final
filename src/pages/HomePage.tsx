@@ -5,6 +5,7 @@ import BoomerangVideoBg from '../BoomerangVideoBg';
 import ServiceTabs from '../components/ServiceTabs';
 import WhatWeProvideSection from '../components/home/WhatWeProvideSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
+import TestimonialsSection from '../components/home/TestimonialsSection';
 import { heroTrustBadges, heroTrustCopy } from '../data/content';
 
 const BG_VIDEO =
@@ -73,6 +74,7 @@ export default function HomePage() {
 
         <WhatWeProvideSection variant="hero" />
         <WhyChooseUsSection variant="hero" limit={6} />
+        <TestimonialsSection variant="hero" />
       </div>
     </section>
   );
