@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SectionHeader from '../SectionHeader';
+import { aboutUsIntro, UZBEKISTAN_TOURISM_BOARD_URL } from '../../data/content';
 
 export default function AboutSection() {
   return (
@@ -9,7 +10,7 @@ export default function AboutSection() {
           <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-[#E5E5E5] shadow-sm">
             <img
               src="/images/about-travels-mantra.webp"
-              alt="About Travels Mantra Central Asia travel specialists"
+              alt="Relaxing beach view – Travels Mantra Central Asia tour experts offering certified travel experiences to Uzbekistan, Kazakhstan, and Kyrgyzstan"
               className="img-cover w-full h-full"
               loading="lazy"
             />
@@ -17,17 +18,28 @@ export default function AboutSection() {
           <div>
             <SectionHeader
               label="About Us"
-              title="About Travels Mantra"
-              subtitle=""
+              title={aboutUsIntro.companyName}
+              subtitle={aboutUsIntro.certification}
             />
-            <p className="text-body text-[#4b5b47] leading-relaxed -mt-6">
-              Travels Mantra is an ISO 9001:2015 certified travel company and Euro Asia certified travel agent,
-              registered by Uzbekistan Tourism Board. Since 2008, we have focused on creating reliable, transparent,
-              and customized travel experiences across Central Asia.
-            </p>
+            {aboutUsIntro.paragraphs.map((paragraph, i) => (
+              <p
+                key={paragraph.slice(0, 40)}
+                className={`text-body text-[#4b5b47] leading-relaxed ${i === 0 ? '-mt-6' : 'mt-4'}`}
+              >
+                {paragraph}
+              </p>
+            ))}
             <p className="text-body text-[#4b5b47] leading-relaxed mt-4">
-              With offices and local networks across Tashkent, Almaty, Delhi, Russia, Georgia, and other CIS regions,
-              Travels Mantra helps travelers with tours, hotels, transfers, visa support, guides, and tailor-made itineraries.
+              {aboutUsIntro.tourismBoardText}{' '}
+              <a
+                href={UZBEKISTAN_TOURISM_BOARD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#336443] hover:text-[#1f2a1d] underline underline-offset-2"
+              >
+                {aboutUsIntro.tourismBoardLabel}
+              </a>
+              .
             </p>
             <Link to="/about-us" className="btn-primary inline-flex mt-6 min-h-[44px]">
               Know More About Us

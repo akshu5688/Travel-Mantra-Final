@@ -4,16 +4,13 @@ import {
   Car,
   Buildings,
   Translate,
-  UserSound,
+  Presentation,
   Airplane,
-  MapPin,
   Bus,
   SlidersHorizontal,
-  ListBullets,
-  Headset,
 } from '@phosphor-icons/react';
 import SectionHeader from '../SectionHeader';
-import { travelServices } from '../../data/content';
+import { aboutServicesSummary, travelServices } from '../../data/content';
 
 const serviceIcons = [
   CalendarCheck,
@@ -21,13 +18,10 @@ const serviceIcons = [
   Car,
   Buildings,
   Translate,
-  UserSound,
+  Presentation,
   Airplane,
-  MapPin,
   Bus,
   SlidersHorizontal,
-  ListBullets,
-  Headset,
 ];
 
 export default function TravelServicesSection() {
@@ -36,8 +30,8 @@ export default function TravelServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           label="Services"
-          title="Our Central Asia Travel Services"
-          subtitle="End-to-end support for tours, visas, hotels, transfers, and customized itineraries."
+          title="Set of Our Services"
+          subtitle={aboutServicesSummary}
         />
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {travelServices.map((service, i) => {

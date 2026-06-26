@@ -458,17 +458,85 @@ export const visaServices = [
 
 export const travelServices = [
   'Fixed Departures',
-  'Visa Support / LOI',
-  'Arrival and Departure Transfers',
-  'Hotel Reservation',
-  'Local Interpreters',
-  'Hindi-Speaking Guides',
+  'Visa Support (LOI)',
+  'Transfers on Arrival and Departure',
+  'Room Reservation & Accommodation in Hotels and B&B',
+  'Local Interpreters and Hindi-Speaking Guides',
+  'Conference Halls Rental for Business Meetings',
   'Air Ticket Reservation',
-  'Sightseeing',
-  'Transportation',
-  'Tailor-Made Itineraries',
-  'Regular Itineraries',
-  '24×7 Local Support',
+  'Sightseeing & Transportation by Cars, Mini-Bus, and Coaches',
+  'Tailor-Made, Customized & Regular Itineraries',
+];
+
+export const UZBEKISTAN_TOURISM_BOARD_URL = 'https://uzbekistan.travel/';
+
+export const aboutUsIntro = {
+  certification: 'An ISO 9001:2015 Certified',
+  companyName: 'Travels Mantra',
+  bannerSubtitle:
+    'Central Asia tour experts offering certified travel experiences to Uzbekistan, Kazakhstan, and Kyrgyzstan.',
+  paragraphs: [
+    'Travels Mantra (An ISO 9001:2015 Certified Organization and Euro Asia certified travel agent by Uzbekistan Tourism & registered by Uzbekistan Tourism Board) was formed to revolutionize and redefine the travel industry by exploring the hidden destinations of Central Asia in 2008. With over 10 years of experience, we believe in providing complete satisfaction and contentment to our travel agents as well as clients. As your trusted travel consolidator, destination management company, and travel wholesaler, we ensure quality, transparency, and reliability.',
+    'We operate offices across Central Asia including Tashkent (Uzbekistan), Almaty (Kazakhstan), Russia, Serbia, Belarus, Kyrgyzstan, Ukraine, Georgia, Armenia, Bosnia, and Azerbaijan.',
+  ],
+  tourismBoardText: 'To know more about regional tourism updates and travel guidelines, visit the',
+  tourismBoardLabel: 'Official Uzbekistan Tourism Board',
+};
+
+export const aboutServicesSummary =
+  'Our expert travel services include visa support, fixed departures, and customized itineraries to make your journey seamless and memorable.';
+
+export const aboutHighlights = [
+  {
+    title: '65,000+ Hotels',
+    desc: 'We listed more than 65,000+ hotels globally at reliable offers and rates.',
+  },
+  {
+    title: 'Low Rates & Top Savings',
+    desc: 'We provide lower rates with true value for your money — exactly what you want. That\'s why we created the Travels Mantra Best Price Guarantee.',
+  },
+  {
+    title: 'Reviewed by Real Travelers',
+    desc: 'Travels Mantra aims to update travelers with real-time experiences of their journey.',
+  },
+  {
+    title: 'Make Your Plan',
+    desc: 'Travels Mantra will customize your tour plan for your upcoming holidays.',
+  },
+];
+
+export const aboutTravelTips = [
+  {
+    title: 'Travel Guide and Tips',
+    desc: 'Explore expert Central Asia travel guides and tips with Travels Mantra for your next adventure.',
+    image: '/images/blog-central-asia-guide.webp',
+    alt: 'Traveler exploring Central Asia mountains – Travels Mantra travel guide and tips for Uzbekistan, Kazakhstan, and Kyrgyzstan tours',
+    href: '/blog',
+  },
+  {
+    title: 'Baggage Policy',
+    desc: 'As all airlines have their individually unique rules, we recommend that you check their website and verify your baggage allowance. This is a necessary step in order to ensure that you meet the requirements for your flight and avoid any additional fees.',
+  },
+  {
+    title: 'Airport Check-in',
+    desc: 'There are multiple check-in options available in India — web check-in, tele check-in, common user self-service kiosks, and check-in counters of respective airlines. If you have opted for web and tele check-in services, ensure your boarding pass has a seal from the appropriate airline counter to avoid any inconvenience.',
+  },
+  {
+    title: 'Traveling with Kids',
+    desc: 'Flying with children of any age can be daunting whether you are a seasoned traveler or flying for the first time. By reviewing basic travel tips and strategies, you will navigate air travel with infants, toddlers, or children with ease and arrive at your destination with your sanity intact. It\'s all about having the right supplies when traveling with kids.',
+  },
+  {
+    title: 'Special Assistance',
+    desc: 'Special assistance requirements need to be pre-booked through your airline and/or tour operator prior to your arrival at the terminal, such as a wheelchair.',
+  },
+];
+
+export const aboutFeaturedArticles = [
+  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/bishkek-nightlife-guide' },
+  { title: 'Germany Tourism', href: '/blog' },
+  { title: 'Austria Tourism – Vienna Packages', href: '/blog' },
+  { title: 'Russia Tourism', href: '/tours/russia' },
+  { title: 'Kazakh Tourism', href: '/tours/almaty' },
 ];
 
 export const faqItems = [
