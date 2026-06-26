@@ -50,12 +50,6 @@ export default function HomePage() {
             >
               Search
             </Link>
-            <Link
-              to="/build-your-package"
-              className="btn-outline w-full sm:w-auto min-h-[44px] !border-white !text-white hover:!bg-white hover:!text-[#1f2a1d]"
-            >
-              Get Free Trip Plan
-            </Link>
           </div>
         </div>
       </div>
