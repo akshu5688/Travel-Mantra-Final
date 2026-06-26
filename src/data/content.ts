@@ -759,16 +759,15 @@ export const popularDestinations = cisDestinations.map((d) => ({
 }));
 
 export const destinationCategories = [
-  { name: 'Uzbekistan', image: '/images/tashkent-uzbekistan-tour.webp', alt: 'Uzbekistan Central Asia tour destinations' },
-  { name: 'Kazakhstan', image: '/images/almaty-kazakhstan-tour.webp', alt: 'Kazakhstan Central Asia tour destinations' },
-  { name: 'Azerbaijan', image: '/images/baku-azerbaijan-tour.webp', alt: 'Azerbaijan Central Asia tour destinations' },
-  { name: 'Kyrgyzstan', image: '/images/bishkek-kyrgyzstan-tour.webp', alt: 'Kyrgyzstan Central Asia tour destinations' },
-  { name: 'Georgia', image: '/images/georgia-tour.webp', alt: 'Georgia Caucasus tour destinations' },
-  { name: 'Armenia', image: '/images/armenia-tour.webp', alt: 'Armenia Caucasus tour destinations' },
-  { name: 'Russia', image: '/images/moscow-russia-tour.webp', alt: 'Russia Moscow tour destinations' },
-  { name: 'Ukraine', image: '/images/kiev-ukraine-tour.webp', alt: 'Ukraine Kiev tour destinations' },
-  { name: 'Belarus', image: '/images/belarus-minsk-tour.webp', alt: 'Belarus Minsk tour destinations' },
-  { name: 'Turkey', image: '/images/turkey-tour.webp', alt: 'Turkey tour destinations' },
+  { name: 'India', image: '/images/destination-india.webp', alt: 'Taj Mahal and iconic India heritage destinations' },
+  { name: 'Asia', image: '/images/destination-asia.webp', alt: 'Southeast Asia temples and island tour destinations' },
+  { name: 'Central Asia', image: '/images/destination-central-asia.webp', alt: 'Registan Square Samarkand and Central Asia Silk Road tours' },
+  { name: 'Europe', image: '/images/destination-europe.webp', alt: 'European cityscapes and scenic holiday destinations' },
+  { name: 'Middle East', image: '/images/destination-middle-east.webp', alt: 'Dubai skyline and Middle East tour destinations' },
+  { name: 'Africa', image: '/images/destination-africa.webp', alt: 'African safari and island tour destinations' },
+  { name: 'North America', image: '/images/destination-north-america.webp', alt: 'North America city and nature tour packages' },
+  { name: 'Balkans', image: '/images/destination-balkans.webp', alt: 'Balkans heritage and coastal tour destinations' },
+  { name: 'Oceania', image: '/images/destination-oceania.webp', alt: 'Sydney Opera House and Oceania tour destinations' },
 ];
 
 export const excursions = [

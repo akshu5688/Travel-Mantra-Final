@@ -25,6 +25,7 @@ export default function App() {
         <Route path="hotels" element={<HotelsPage />} />
         <Route path="hotels/results" element={<HotelResultsPage />} />
         <Route path="tours" element={<ToursPage />} />
+        <Route path="tour-search" element={<Navigate to="/tours" replace />} />
         <Route path="tours/:slug" element={<TourDetailPage />} />
         <Route path="excursions" element={<ExcursionsPage />} />
         <Route path="about-us" element={<AboutPage />} />

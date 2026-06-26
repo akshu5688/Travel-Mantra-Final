@@ -3,14 +3,19 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { CaretDown, Fire, List, X } from '@phosphor-icons/react';
 import Footer from './Footer';
 import Chatbot from './Chatbot';
+import ToursMegaMenu from './ToursMegaMenu';
 import { navLinks, serviceTabs } from '../data/content';
+import { tourRegions } from '../data/tourRegions';
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hotOffersOpen, setHotOffersOpen] = useState(false);
+  const [toursOpen, setToursOpen] = useState(false);
   const [mobileHotOffersOpen, setMobileHotOffersOpen] = useState(false);
+  const [mobileToursOpen, setMobileToursOpen] = useState(false);
   const [navSolid, setNavSolid] = useState(false);
   const hotOffersRef = useRef<HTMLDivElement>(null);
+  const toursRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -22,7 +27,9 @@ export default function Layout() {
   useEffect(() => {
     setMenuOpen(false);
     setHotOffersOpen(false);
+    setToursOpen(false);
     setMobileHotOffersOpen(false);
+    setMobileToursOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -47,6 +54,17 @@ export default function Layout() {
     document.addEventListener('mousedown', onPointerDown);
     return () => document.removeEventListener('mousedown', onPointerDown);
   }, [hotOffersOpen]);
+
+  useEffect(() => {
+    if (!toursOpen) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (toursRef.current && !toursRef.current.contains(event.target as Node)) {
+        setToursOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', onPointerDown);
+    return () => document.removeEventListener('mousedown', onPointerDown);
+  }, [toursOpen]);
 
   const closeMenu = () => setMenuOpen(false);
   const showSolidNav = !isHome || navSolid;
@@ -86,7 +104,36 @@ export default function Layout() {
 
           <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center max-w-5xl mx-4">
             {navLinks.map((link) =>
-              link.hot ? (
+              link.href === '/tours' ? (
+                <div key={link.href} ref={toursRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToursOpen((open) => !open);
+                      setHotOffersOpen(false);
+                    }}
+                    className={`inline-flex items-center gap-1 text-[13px] px-2 py-1.5 whitespace-nowrap transition-colors ${
+                      location.pathname.startsWith('/tours') || toursOpen
+                        ? showSolidNav ? 'text-[#1f2a1d] font-semibold' : 'text-white font-semibold'
+                        : showSolidNav ? 'text-[#4b5b47] hover:text-[#1f2a1d]' : 'text-white/90 hover:text-white'
+                    }`}
+                    aria-expanded={toursOpen}
+                    aria-haspopup="true"
+                  >
+                    {link.label}
+                    <CaretDown
+                      size={12}
+                      weight="bold"
+                      className={`shrink-0 transition-transform ${toursOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {toursOpen && (
+                    <div className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2">
+                      <ToursMegaMenu onNavigate={() => setToursOpen(false)} />
+                    </div>
+                  )}
+                </div>
+              ) : link.hot ? (
                 <div key={link.href} ref={hotOffersRef} className="relative">
                   <button
                     type="button"
@@ -166,7 +213,58 @@ export default function Layout() {
         <div className="flex flex-col h-full pt-20 px-5 sm:px-6 pb-8 overflow-y-auto">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#85AB8B] mb-3">Menu</p>
           {navLinks.map((link, i) =>
-            link.hot ? (
+            link.href === '/tours' ? (
+              <div
+                key={link.href}
+                className={`border-b border-[#E5E5E5] transition-all ${
+                  menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-6 opacity-0'
+                }`}
+                style={{ transitionDelay: menuOpen ? `${100 + i * 50}ms` : '0ms' }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setMobileToursOpen((open) => !open)}
+                  className={`flex w-full items-center justify-between py-3.5 text-lg font-semibold ${
+                    location.pathname.startsWith('/tours') ? 'text-[#336443]' : 'text-[#1f2a1d]'
+                  }`}
+                  aria-expanded={mobileToursOpen}
+                >
+                  {link.label}
+                  <CaretDown
+                    size={16}
+                    weight="bold"
+                    className={`transition-transform ${mobileToursOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {mobileToursOpen && (
+                  <div className="pb-4 space-y-4">
+                    {tourRegions.map((region) => (
+                      <div key={region.name}>
+                        <Link
+                          to={`/tours?region=${encodeURIComponent(region.name)}`}
+                          onClick={closeMenu}
+                          className="text-sm font-bold uppercase tracking-wider text-[#336443]"
+                        >
+                          {region.name}
+                        </Link>
+                        <div className="mt-2 grid grid-cols-2 gap-1">
+                          {region.destinations.map((dest) => (
+                            <Link
+                              key={dest.label}
+                              to={dest.href}
+                              onClick={closeMenu}
+                              className="text-sm text-[#4b5b47] py-1 hover:text-[#336443]"
+                            >
+                              {dest.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : link.hot ? (
               <div
                 key={link.href}
                 className={`border-b border-[#E5E5E5] transition-all ${
