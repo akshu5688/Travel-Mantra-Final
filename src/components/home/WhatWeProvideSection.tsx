@@ -114,7 +114,7 @@ export default function WhatWeProvideSection({ variant = 'default' }: WhatWeProv
   }
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-t border-[#E5E5E5]/60">
+    <section id="what-we-provide" className="py-14 sm:py-20 bg-white border-t border-[#E5E5E5]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{content}</div>
     </section>
   );
