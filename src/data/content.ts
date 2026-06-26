@@ -505,7 +505,15 @@ export const aboutHighlights = [
   },
 ];
 
-export const aboutTravelTips = [
+export type AboutTravelTip = {
+  title: string;
+  desc: string;
+  image?: string;
+  alt?: string;
+  href?: string;
+};
+
+export const aboutTravelTips: AboutTravelTip[] = [
   {
     title: 'Travel Guide and Tips',
     desc: 'Explore expert Central Asia travel guides and tips with Travels Mantra for your next adventure.',

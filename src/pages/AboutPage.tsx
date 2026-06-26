@@ -154,7 +154,7 @@ export default function AboutPage() {
                 >
                   {tip.image && (
                     <div className="aspect-[21/9] max-h-48 overflow-hidden">
-                      <img src={tip.image} alt={tip.alt ?? tip.title} className="img-cover w-full h-full" loading="lazy" />
+                      <img src={tip.image} alt={tip.alt || tip.title} className="img-cover w-full h-full" loading="lazy" />
                     </div>
                   )}
                   <div className="p-5 sm:p-6">
