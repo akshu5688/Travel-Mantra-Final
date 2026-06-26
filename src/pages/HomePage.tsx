@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import BoomerangVideoBg from '../BoomerangVideoBg';
 import HeroPackageCard from '../components/HeroPackageCard';
-import TripSearchBox from '../components/TripSearchBox';
 import ServiceTabs from '../components/ServiceTabs';
 import SectionHeader from '../components/SectionHeader';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
@@ -70,7 +69,13 @@ export default function HomePage() {
                 <Link to="/tours" className="btn-secondary w-full sm:w-auto min-h-[44px]">
                   Explore Central Asia Packages
                 </Link>
-                <Link to="/build-your-package" className="btn-primary w-full sm:w-auto min-h-[44px] !bg-white !text-[#1f2a1d] hover:!bg-gradient-to-r hover:!from-[#F97316] hover:!to-[#FB923C] hover:!text-white">
+                <Link
+                  to="/search"
+                  className="btn-primary w-full sm:w-auto min-h-[44px] !bg-white !text-[#1f2a1d] hover:!bg-gradient-to-r hover:!from-[#F97316] hover:!to-[#FB923C] hover:!text-white"
+                >
+                  Search
+                </Link>
+                <Link to="/build-your-package" className="btn-outline w-full sm:w-auto min-h-[44px] !border-white !text-white hover:!bg-white hover:!text-[#1f2a1d]">
                   Get Free Trip Plan
                 </Link>
               </div>
@@ -81,10 +86,6 @@ export default function HomePage() {
                 <HeroPackageCard key={pkg.title} {...pkg} heroEqual />
               ))}
             </div>
-          </div>
-
-          <div className="mt-6 lg:mt-8 hero-search-panel rounded-xl sm:rounded-2xl bg-white border border-[#E5E5E5] shadow-xl p-3 sm:p-4 lg:p-6">
-            <TripSearchBox />
           </div>
         </div>
       </section>

@@ -13,6 +13,7 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import HotelsPage from './pages/HotelsPage';
+import SearchPage from './pages/SearchPage';
 import HotelResultsPage from './pages/HotelResultsPage';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="search" element={<SearchPage />} />
         <Route path="hotels" element={<HotelsPage />} />
         <Route path="hotels/results" element={<HotelResultsPage />} />
         <Route path="tours" element={<ToursPage />} />
