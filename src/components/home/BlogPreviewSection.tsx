@@ -9,10 +9,10 @@ export default function BlogPreviewSection() {
         <SectionHeader
           label="Blog"
           title="Travel Guides & Blogs"
-          subtitle="Expert Central Asia travel guides, visa tips, and destination checklists."
+          subtitle="Expert travel guides, visa tips, and destination insights for Indian travelers."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {blogPosts.map((post) => (
+          {blogPosts.slice(0, 6).map((post) => (
             <article
               key={post.slug}
               className="card-equal flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E5E5E5] hover:border-[#85AB8B]/40 transition-colors"
