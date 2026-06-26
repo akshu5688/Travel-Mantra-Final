@@ -392,6 +392,53 @@ body,
 .brand-logo--on-dark .brand-mantra { color: #fff; }
 .brand-logo--on-dark .brand-mantra em { color: #85AB8B; }
 
+.nav-mobile-welcome {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.nav-mobile-welcome__brand {
+  display: block;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-mobile-welcome__tagline {
+  display: block;
+  margin-top: 0.125rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.nav-mobile-welcome--dark .nav-mobile-welcome__brand {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-mobile-welcome--dark .nav-mobile-welcome__tagline {
+  color: #85AB8B;
+}
+
+.nav-mobile-welcome--solid .nav-mobile-welcome__brand {
+  color: #4b5b47;
+}
+
+.nav-mobile-welcome--solid .nav-mobile-welcome__tagline {
+  color: #336443;
+}
+
+@media (min-width: 640px) {
+  .nav-mobile-welcome__brand {
+    font-size: 0.625rem;
+  }
+
+  .nav-mobile-welcome__tagline {
+    font-size: 0.9375rem;
+  }
+}
+
 .hero-video-wrap {
   isolation: isolate;
 }

@@ -6,14 +6,14 @@ import ServiceTabs from '../components/ServiceTabs';
 import WhatWeProvideSection from '../components/home/WhatWeProvideSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
-import { heroTrustBadges, heroTrustCopy } from '../data/content';
+import { heroTrustBadges } from '../data/content';
 
 const BG_VIDEO =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4';
 
 const HERO_HEADLINE = 'Central Asia Travel Experts Since 2008';
 const HERO_SUBHEADLINE =
-  'Premium tours to Uzbekistan, Kazakhstan, Azerbaijan & more. Local offices in Tashkent, Almaty & Delhi with full visa and LOI support.';
+  'We operate offices across Central Asia including Tashkent (Uzbekistan), Almaty (Kazakhstan), Russia, Serbia, Belarus, Kyrgyzstan, Ukraine, Georgia, Armenia, Bosnia, and Azerbaijan.';
 
 export default function HomePage() {
   const location = useLocation();
@@ -57,8 +57,6 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
-
-            <p className="text-xs sm:text-sm text-white/80 mt-4 leading-relaxed max-w-2xl">{heroTrustCopy}</p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 mt-5">
               <Link to="/tours" className="btn-secondary w-full sm:w-auto min-h-[44px]">
