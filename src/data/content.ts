@@ -486,7 +486,7 @@ export const visaProducts: VisaProduct[] = [
 ];
 
 export const visaFeaturedArticles = [
-  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/bishkek-nightlife-guide' },
+  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/kyrgyzstan-travel-guide-2026-best-tours-attractions-travel-tips' },
   { title: 'Germany Tourism', href: '/blog' },
   { title: 'Austria Tourism – Vienna Packages', href: '/blog' },
 ];
@@ -580,7 +580,7 @@ export const aboutTravelTips: AboutTravelTip[] = [
 ];
 
 export const aboutFeaturedArticles = [
-  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/bishkek-nightlife-guide' },
+  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/kyrgyzstan-travel-guide-2026-best-tours-attractions-travel-tips' },
   { title: 'Germany Tourism', href: '/blog' },
   { title: 'Austria Tourism – Vienna Packages', href: '/blog' },
   { title: 'Russia Tourism', href: '/tours/russia' },
