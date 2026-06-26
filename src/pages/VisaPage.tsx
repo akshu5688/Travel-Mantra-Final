@@ -8,12 +8,9 @@ export default function VisaPage() {
   return (
     <>
       <PageBanner
+        label={visaPageIntro.label}
         title="Visa & Related Services"
         subtitle={visaPageIntro.certification}
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Visas' },
-        ]}
       />
       <VisaSection hideHeader />
 
