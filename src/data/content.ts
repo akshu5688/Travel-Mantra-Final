@@ -447,13 +447,53 @@ export const featuredTours = [
   },
 ];
 
-export const visaServices = [
-  { title: 'LOI Support', desc: 'Full Letter of Invitation assistance for Uzbekistan and Central Asian countries.' },
-  { title: 'Tourist Visa Guidance', desc: 'Step-by-step visa process for Indian passport holders by destination.' },
-  { title: 'Document Checklist', desc: 'Passport, photos, bank statements, and invitation letters organised for you.' },
-  { title: 'Country-wise Visa Assistance', desc: 'Up-to-date visa rules for Uzbekistan, Kazakhstan, Azerbaijan, and CIS nations.' },
-  { title: 'Visa + Package Support', desc: 'Combined tour and visa handling in one transparent package.' },
-  { title: 'Travel Insurance Help', desc: 'Insurance plans that meet visa requirements and protect your trip.' },
+export const visaPageIntro = {
+  certification: 'An ISO 9001:2015 Certified',
+  label: 'Visa services',
+  title: 'Only for Indian Nationals',
+  paragraphs: [
+    'We assist – Corporate clients, Travel Agents, Government Employees, Students, Diplomats, International humanitarian organizations and Cruise Ship Operators.',
+    'Objective – To assist our clients with complete information & documents Require as per the needs of Embassies, so that none of our clients miss their valuable trip abroad.',
+    'Our team members are fully trained and well conversant with latest trends in field and extensive work experience in Visa Facilitation.',
+    'The tourism industry has a long way to go because after an intensive work schedule everyone wants to enjoy have fun and entertainment. TravelsMantra.Com is an established service provider of all kinds of tour and travel related services and possesses vast and deep knowledge of the tourism industry. We are well connected with all prime locations and destinations of the world and furnish each required detail of the places chosen by our clients for their holidays. Right from ticketing to hotel/resort booking, and from arranging vehicles to organizing trips, we also extend services including medical aid and other hospitality care. Tourism ,Cruise ,Hotel brands and Visas exclusively in India, and is focused on bringing the best of the world to India’s doorsteps.',
+  ],
+};
+
+export const visaAnnouncements = [
+  { text: 'Introducing Kazakhstan e Visa from 1 January 2019', anchor: 'kazakhstan' },
+  { text: 'Now! Get Kyrgyzstan Guaranteed* e Visa/Sticker Visa', anchor: 'kyrgyzstan' },
+];
+
+export type VisaProduct = {
+  id: string;
+  title: string;
+  price: string;
+  image: string;
+  alt: string;
+};
+
+export const visaProducts: VisaProduct[] = [
+  { id: 'uzbekistan', title: 'Uzbekistan e-visa', price: '₹4,500', image: '/images/visa-flags/uzbekistan.png', alt: 'Uzbekistan e-visa flag' },
+  { id: 'kyrgyzstan', title: 'Kyrgyzstan e-visa', price: '₹22,500', image: '/images/visa-flags/kyrgyzstan.png', alt: 'Kyrgyzstan e-visa flag' },
+  { id: 'kazakhstan', title: 'Kazakhstan e-visa', price: '₹22,500', image: '/images/visa-flags/kazakhstan.png', alt: 'Kazakhstan e-visa flag' },
+  { id: 'azerbaijan', title: 'Azerbaijan e Visa', price: '₹4,500', image: '/images/visa-flags/azerbaijan.png', alt: 'Azerbaijan e-visa flag' },
+  { id: 'georgia', title: 'Georgia e-visa', price: '₹10,500', image: '/images/visa-flags/georgia.png', alt: 'Georgia e-visa flag' },
+  { id: 'tajikistan', title: 'Tajikistan e-visa', price: '₹10,500', image: '/images/visa-flags/tajikistan.png', alt: 'Tajikistan e-visa flag' },
+  { id: 'russia', title: 'Russia Sticker Visa', price: '₹15,500', image: '/images/visa-flags/russia.png', alt: 'Russia sticker visa flag' },
+  { id: 'armenia', title: 'Armenia e-visa', price: '₹3,000', image: '/images/visa-flags/armenia.jpg', alt: 'Armenia e-visa flag' },
+  { id: 'dubai', title: 'Dubai e-Visa', price: '₹8,500', image: '/images/visa-flags/uae.png', alt: 'Dubai e-visa flag' },
+  { id: 'turkey', title: 'Turkey Sticker visa', price: '₹22,500', image: '/images/visa-flags/turkey.jpg', alt: 'Turkey sticker visa flag' },
+];
+
+export const visaFeaturedArticles = [
+  { title: 'Kyrgyzstan Tourism – Bishkek Nightlife', href: '/blog/bishkek-nightlife-guide' },
+  { title: 'Germany Tourism', href: '/blog' },
+  { title: 'Austria Tourism – Vienna Packages', href: '/blog' },
+];
+
+export const visaTourismPartners = [
+  { name: 'Russia Tourism', image: '/images/visa-flags/russia-tourism.jpg', alt: 'Russia Tourism partner logo' },
+  { name: 'Kazakh Tourism', image: '/images/visa-flags/kazakh-tourism.jpg', alt: 'Kazakh Tourism partner logo' },
 ];
 
 export const travelServices = [
@@ -596,56 +636,7 @@ export const testimonials = [
   },
 ];
 
-export const blogPosts = [
-  {
-    slug: 'tashkent-travel-guide',
-    title: 'Tashkent Travel Guide',
-    date: 'June 2026',
-    excerpt: 'Essential tips for first-time visitors — visa, currency, and must-see sights.',
-    image: '/images/tashkent-uzbekistan-tour.webp',
-    alt: 'Tashkent travel guide by Travels Mantra',
-  },
-  {
-    slug: 'baku-visa-travel-guide',
-    title: 'Baku Visa & Travel Guide',
-    date: 'May 2026',
-    excerpt: 'Visa on arrival, documents, and the best time to visit Azerbaijan.',
-    image: '/images/baku-azerbaijan-tour.webp',
-    alt: 'Baku visa and travel guide by Travels Mantra',
-  },
-  {
-    slug: 'almaty-travel-tips',
-    title: 'Almaty Travel Tips',
-    date: 'May 2026',
-    excerpt: 'Mountain day trips, e-visa process, and local food recommendations.',
-    image: '/images/almaty-kazakhstan-tour.webp',
-    alt: 'Almaty travel tips by Travels Mantra',
-  },
-  {
-    slug: 'bishkek-nightlife-guide',
-    title: 'Bishkek Nightlife Guide',
-    date: 'April 2026',
-    excerpt: 'Evening experiences, cafes, and cultural spots in Kyrgyzstan\'s capital.',
-    image: '/images/bishkek-kyrgyzstan-tour.webp',
-    alt: 'Bishkek nightlife guide by Travels Mantra',
-  },
-  {
-    slug: 'uzbekistan-travel-checklist',
-    title: 'Uzbekistan Travel Checklist',
-    date: 'April 2026',
-    excerpt: 'Documents, packing list, and LOI requirements for Indian travelers.',
-    image: '/images/samarkand-uzbekistan-tour.webp',
-    alt: 'Uzbekistan travel checklist by Travels Mantra',
-  },
-  {
-    slug: 'central-asia-travel-tips',
-    title: 'Central Asia Travel Tips for Indian Travelers',
-    date: 'March 2026',
-    excerpt: 'Currency, connectivity, and cultural etiquette across CIS countries.',
-    image: '/images/blog-central-asia-guide.webp',
-    alt: 'Central Asia travel tips for Indian travelers by Travels Mantra',
-  },
-];
+export { blogPosts } from './blogs';
 
 export const enquiryDestinations = [
   'Russia (Moscow)',
