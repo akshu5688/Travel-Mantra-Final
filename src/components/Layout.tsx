@@ -52,13 +52,13 @@ export default function Layout() {
             <span className="brand-mantra"><em>M</em>antra</span>
           </Link>
 
-          <div className="hidden 2xl:flex items-center gap-0.5 flex-1 justify-center max-w-5xl mx-4">
+          <div className="hidden xl:flex items-center gap-0.5 flex-1 justify-center max-w-5xl mx-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={`text-[13px] px-2 py-1.5 whitespace-nowrap transition-colors ${
-                  location.pathname === link.href
+                  location.pathname === link.href || location.pathname.startsWith(`${link.href}/`)
                     ? showSolidNav ? 'text-[#1f2a1d] font-semibold' : 'text-white font-semibold'
                     : showSolidNav ? 'text-[#4b5b47] hover:text-[#1f2a1d]' : 'text-white/90 hover:text-white'
                 }`}
@@ -71,7 +71,7 @@ export default function Layout() {
           <Link
             to="/"
             state={{ scrollToEnquiry: true }}
-            className={`hidden 2xl:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
+            className={`hidden xl:inline-flex btn-primary !py-2.5 !px-5 !text-sm shrink-0 ${
               !showSolidNav ? '!bg-white !text-[#1f2a1d] hover:!bg-white/90' : ''
             }`}
           >
@@ -80,7 +80,7 @@ export default function Layout() {
 
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className={`2xl:hidden relative flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-md border transition-all ${
+            className={`xl:hidden relative flex items-center justify-center w-11 h-11 rounded-full backdrop-blur-md border transition-all ${
               showSolidNav
                 ? 'bg-white border-[#E5E5E5] text-[#1f2a1d]'
                 : 'bg-white/20 border-white/30 text-white'
@@ -95,14 +95,14 @@ export default function Layout() {
       </nav>
 
       <div
-        className={`2xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={closeMenu}
       >
         <div className="absolute inset-0 bg-[#1f2a1d]/50 backdrop-blur-sm" />
       </div>
 
       <div
-        className={`2xl:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(88vw,360px)] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`xl:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(88vw,360px)] bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

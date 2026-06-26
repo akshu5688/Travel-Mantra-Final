@@ -404,14 +404,45 @@ body,
   object-position: center center;
 }
 
-.hero-scroll-fade {
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(250, 250, 250, 0.3) 80%,
-    #fafafa 100%
-  );
+.hero-pkg-card--equal {
+  min-height: 100%;
 }
+
+.hero-pkg-grid {
+  align-items: stretch;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-pkg-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .hero-pkg-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-pkg-grid .hero-pkg-card--equal {
+    flex: 0 0 min(78vw, 260px);
+    scroll-snap-align: start;
+  }
+}
+
+.service-tabs-scroll .tm-service-tab {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .service-tabs-scroll .tm-service-tab {
+    flex: 1 1 auto;
+  }
+}
+
 
 /* Chatbot offset on mobile so it doesn't hide CTAs */
 @media (max-width: 1023px) {

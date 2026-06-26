@@ -44,7 +44,19 @@ const images = [
 
   // Site hero & about
   { file: 'hero-poster.webp', url: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=90', w: 1920, h: 1080 },
+  { file: 'hero-central-asia-travels-mantra.webp', url: 'https://images.unsplash.com/photo-1664602078796-68ee76b3fc59?w=1920&q=90', w: 1920, h: 1080 },
   { file: 'about-travels-mantra.webp', url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'central-asia-visa-assistance.webp', url: 'https://images.unsplash.com/photo-1715824633698-37810119f69c?w=1200&q=90', w: 1200, h: 900 },
+
+  // Central Asia destination aliases (client-specified filenames)
+  { file: 'tashkent-uzbekistan-tour.webp', url: 'https://images.unsplash.com/photo-1715824633698-37810119f69c?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'samarkand-uzbekistan-tour.webp', url: 'https://images.unsplash.com/photo-1664602078796-68ee76b3fc59?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'bukhara-uzbekistan-tour.webp', url: 'https://images.unsplash.com/photo-1715824633698-37810119f69c?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'almaty-kazakhstan-tour.webp', url: 'https://images.unsplash.com/photo-1655444099262-c56de96c448d?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'baku-azerbaijan-tour.webp', url: 'https://images.unsplash.com/photo-1753706874051-718700368d6b?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'bishkek-kyrgyzstan-tour.webp', url: 'https://images.unsplash.com/photo-1602529359787-ce7468eaf119?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'georgia-tour.webp', url: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'armenia-tour.webp', url: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=90', w: 1200, h: 900 },
 ];
 
 let saved = 0;
