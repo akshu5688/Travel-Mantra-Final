@@ -98,9 +98,10 @@ body,
   line-height: 1.25;
 }
 
-/* Hero section — content-driven */
+/* Hero section — full viewport on first load */
 .hero-section {
-  min-height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .hero-pkg-card--desktop .pkg-img-wrap {
@@ -197,12 +198,6 @@ body,
 @media (min-width: 1024px) {
   .service-tabs-bar {
     max-width: 100%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    min-height: auto;
   }
 }
 

@@ -27,7 +27,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero-section relative w-full overflow-hidden bg-[#1f2a1d]">
+      <section className="hero-section relative w-full min-h-[100dvh] overflow-hidden bg-[#1f2a1d]">
         <BoomerangVideoBg
           src={BG_VIDEO}
           className="absolute inset-0 z-0 h-full w-full"
@@ -35,10 +35,10 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#1f2a1d]/80 via-[#1f2a1d]/60 to-[#1f2a1d]/90 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-[4.75rem] sm:pt-28 lg:pt-[7.25rem] pb-12 sm:pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto w-full min-h-[100dvh] box-border px-4 sm:px-6 lg:px-8 pt-[4.75rem] sm:pt-28 lg:pt-[7.25rem] pb-10 sm:pb-12 flex flex-col justify-center">
           <ServiceTabs />
 
-          <div className="mt-8 lg:mt-12 max-w-3xl">
+          <div className="mt-6 lg:mt-8 max-w-3xl">
             <h1 className="hero-title font-display text-hero-compact font-semibold text-white drop-shadow-lg">
               {HERO_HEADLINE}
             </h1>
