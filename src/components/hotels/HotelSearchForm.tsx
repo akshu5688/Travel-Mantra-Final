@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HOTEL_CITIES, PRICE_RANGES, TRENDING_CITIES, type PriceRangeId } from '../../types/hotel';
 import { buildResultsSearchParams, defaultCheckIn, defaultCheckOut } from '../../utils/hotelSearch';
+import { getLocationImage } from '../../data/locationImages';
 
 type HotelSearchFormProps = {
-  variant?: 'hero' | 'sticky' | 'page';
+  variant?: 'hero' | 'sticky' | 'page' | 'embedded';
   initial?: {
     city?: string;
     checkIn?: string;
@@ -16,10 +17,21 @@ type HotelSearchFormProps = {
   };
 };
 
+const HOTEL_CITY_COUNTRY: Record<string, string> = {
+  Tashkent: 'Uzbekistan',
+  Samarkand: 'Uzbekistan',
+  Bukhara: 'Uzbekistan',
+  Almaty: 'Kazakhstan',
+  Baku: 'Azerbaijan',
+  Bishkek: 'Kyrgyzstan',
+  Delhi: 'India',
+  Moscow: 'Russia',
+};
+
 export default function HotelSearchForm({ variant = 'page', initial }: HotelSearchFormProps) {
   const navigate = useNavigate();
-  const [city, setCity] = useState(initial?.city || 'Goa');
-  const [country, setCountry] = useState('India');
+  const [city, setCity] = useState(initial?.city || 'Tashkent');
+  const [country, setCountry] = useState('Uzbekistan');
   const [checkIn, setCheckIn] = useState(initial?.checkIn || defaultCheckIn());
   const [checkOut, setCheckOut] = useState(initial?.checkOut || defaultCheckOut());
   const [rooms, setRooms] = useState(initial?.rooms || 1);
@@ -28,6 +40,8 @@ export default function HotelSearchForm({ variant = 'page', initial }: HotelSear
   const [budgetRanges, setBudgetRanges] = useState<PriceRangeId[]>(initial?.budgetRanges || []);
   const [showGuests, setShowGuests] = useState(false);
   const [showBudget, setShowBudget] = useState(false);
+
+  const cityPreview = getLocationImage(city);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,6 +52,11 @@ export default function HotelSearchForm({ variant = 'page', initial }: HotelSear
   const pickTrending = (c: string, co: string) => {
     setCity(c);
     setCountry(co);
+  };
+
+  const pickCity = (c: string) => {
+    setCity(c);
+    setCountry(HOTEL_CITY_COUNTRY[c] || 'Central Asia');
   };
 
   const toggleBudget = (id: PriceRangeId) => {
@@ -60,26 +79,39 @@ export default function HotelSearchForm({ variant = 'page', initial }: HotelSear
           <StickyField label="Check-in" value={formatShort(checkIn)} />
           <StickyField label="Check-out" value={formatShort(checkOut)} />
           <StickyField label="Rooms" value={`${rooms} Room${rooms > 1 ? 's' : ''}, ${adults} Adult${adults > 1 ? 's' : ''}`} />
-          <button type="submit" className="ml-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-2.5 rounded-md transition-colors">
-            SEARCH
+          <button type="submit" className="ml-auto btn-secondary font-bold text-sm px-6 py-2.5 rounded-md">
+            Find Your Perfect Trip
           </button>
         </div>
       </form>
     );
   }
 
+  const isEmbedded = variant === 'embedded';
+
   return (
-    <div className={variant === 'hero' ? '' : 'w-full'}>
-      <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-[#E5E5E5] shadow-xl p-4 sm:p-5 pb-10 relative">
+    <div className={variant === 'hero' || isEmbedded ? '' : 'w-full'}>
+      <div className="mb-4 rounded-xl overflow-hidden border border-[#E5E5E5] aspect-[21/9] sm:aspect-[3/1] max-h-[140px] relative">
+        <img src={cityPreview.image} alt={cityPreview.alt} className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1f2a1d]/70 via-transparent to-transparent" />
+        <div className="absolute bottom-2 left-3 text-white">
+          <p className="text-sm font-semibold drop-shadow">{city}, {country}</p>
+        </div>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className={
+          isEmbedded
+            ? 'w-full pb-2'
+            : 'bg-white rounded-2xl border border-[#E5E5E5] shadow-xl p-4 sm:p-5 pb-10 relative'
+        }
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border border-[#E5E5E5] rounded-xl overflow-hidden">
           <SearchField label="City, Property or Location">
             <select
               value={city}
-              onChange={(e) => {
-                const selected = TRENDING_CITIES.find((t) => t.city === e.target.value);
-                setCity(e.target.value);
-                setCountry(selected?.country || 'India');
-              }}
+              onChange={(e) => pickCity(e.target.value)}
               className="w-full text-base font-bold text-[#1f2a1d] bg-transparent border-none outline-none cursor-pointer"
             >
               {HOTEL_CITIES.map((c) => (
@@ -152,25 +184,40 @@ export default function HotelSearchForm({ variant = 'page', initial }: HotelSear
           </SearchField>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 mt-4 text-sm text-[#4b5b47]">
-          <span>Trending:</span>
-          {TRENDING_CITIES.map((t) => (
-            <button
-              key={t.city}
-              type="button"
-              onClick={() => pickTrending(t.city, t.country)}
-              className="bg-[#f3f4f6] hover:bg-[#e5e7eb] border border-[#E5E5E5] rounded-full px-3 py-1 text-xs font-medium transition-colors"
-            >
-              {t.city}, {t.country}
-            </button>
-          ))}
+        <div className="mt-4">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-[#85AB8B] mb-2">Trending</p>
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 -mx-0.5 px-0.5">
+            {TRENDING_CITIES.map((t) => {
+              const loc = getLocationImage(t.city);
+              const active = city === t.city;
+              return (
+                <button
+                  key={t.city}
+                  type="button"
+                  onClick={() => pickTrending(t.city, t.country)}
+                  className={`shrink-0 flex items-center gap-2 rounded-full border pl-1 pr-3 py-1 min-h-[44px] transition-colors ${
+                    active ? 'border-[#336443] bg-[#85AB8B]/15' : 'border-[#E5E5E5] bg-[#FAFAFA] hover:border-[#85AB8B]/50'
+                  }`}
+                >
+                  <span className="w-9 h-9 rounded-full overflow-hidden shrink-0 border border-[#E5E5E5]">
+                    <img src={loc.image} alt={loc.alt} className="w-full h-full object-cover" />
+                  </span>
+                  <span className="text-xs font-semibold text-[#1f2a1d] whitespace-nowrap">{t.city}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <button
           type="submit"
-          className="absolute left-1/2 -translate-x-1/2 -bottom-5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-widest px-10 sm:px-14 py-3.5 rounded-lg shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5 hover:-translate-x-1/2"
+          className={
+            isEmbedded
+              ? 'btn-secondary trip-search-submit w-full min-h-[44px] mt-4'
+              : 'absolute left-1/2 -translate-x-1/2 -bottom-5 bg-gradient-to-r from-[#F97316] to-[#FB923C] hover:from-[#EA580C] hover:to-[#F97316] text-white font-bold text-sm tracking-wide px-10 sm:px-14 py-3.5 rounded-lg shadow-lg transition-all hover:-translate-y-0.5 hover:-translate-x-1/2'
+          }
         >
-          SEARCH
+          Find Your Perfect Trip
         </button>
       </form>
     </div>

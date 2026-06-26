@@ -74,20 +74,20 @@ export const PROPERTY_TYPE_FILTERS: { id: PropertyType; label: string }[] = [
 ];
 
 export const TRENDING_CITIES = [
-  { city: 'Goa', country: 'India' },
-  { city: 'Mumbai', country: 'India' },
-  { city: 'Dubai', country: 'UAE' },
-  { city: 'Bali', country: 'Indonesia' },
-  { city: 'Bangkok', country: 'Thailand' },
+  { city: 'Tashkent', country: 'Uzbekistan' },
+  { city: 'Almaty', country: 'Kazakhstan' },
+  { city: 'Baku', country: 'Azerbaijan' },
+  { city: 'Samarkand', country: 'Uzbekistan' },
+  { city: 'Bishkek', country: 'Kyrgyzstan' },
 ];
 
 export const HOTEL_CITIES = [
-  'Goa',
-  'Mumbai',
-  'Dubai',
-  'Bali',
-  'Bangkok',
-  'Jaipur',
-  'Manali',
-  'Shimla',
+  'Tashkent',
+  'Samarkand',
+  'Bukhara',
+  'Almaty',
+  'Baku',
+  'Bishkek',
+  'Delhi',
+  'Moscow',
 ] as const;

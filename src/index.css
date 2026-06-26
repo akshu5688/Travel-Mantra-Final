@@ -273,7 +273,7 @@ body,
   }
 
   .trip-search-title {
-    @apply text-base sm:text-lg font-semibold text-[#1f2a1d] font-display;
+    @apply text-base sm:text-xl font-semibold text-[#1f2a1d] font-display;
   }
 
   .trip-search-sub {

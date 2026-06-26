@@ -1,8 +1,110 @@
-export const navLinks = [
+export const hotOfferDestinations = [
+  {
+    label: 'Russia (Moscow)',
+    name: 'Moscow',
+    country: 'Russia',
+    desc: 'Red Square, Kremlin, and classic Russian city tours.',
+    image: '/images/moscow-russia-tour.webp',
+    alt: 'Moscow Russia hot offer tour package by Travels Mantra',
+    href: '/tours/russia',
+  },
+  {
+    label: 'Armenia (Yerevan)',
+    name: 'Yerevan',
+    country: 'Armenia',
+    desc: 'Yerevan culture, monasteries, and scenic highland routes.',
+    image: '/images/armenia-tour.webp',
+    alt: 'Armenia Yerevan hot offer tour package by Travels Mantra',
+    href: '/tours/armenia',
+  },
+  {
+    label: 'Tashkent (Uzbekistan)',
+    name: 'Tashkent',
+    country: 'Uzbekistan',
+    desc: 'Historic city escapes with LOI and visa support.',
+    image: '/images/tashkent-uzbekistan-tour.webp',
+    alt: 'Tashkent Uzbekistan hot offer tour package by Travels Mantra',
+    href: '/tours/tashkent',
+  },
+  {
+    label: 'Baku (Azerbaijan)',
+    name: 'Baku',
+    country: 'Azerbaijan',
+    desc: 'Flame Towers, Old City, and Caspian Sea experiences.',
+    image: '/images/baku-azerbaijan-tour.webp',
+    alt: 'Baku Azerbaijan hot offer tour package by Travels Mantra',
+    href: '/tours/baku',
+  },
+  {
+    label: 'Almaty (Kazakhstan)',
+    name: 'Almaty',
+    country: 'Kazakhstan',
+    desc: 'Mountain views, city tours, and easy e-visa packages.',
+    image: '/images/almaty-kazakhstan-tour.webp',
+    alt: 'Almaty Kazakhstan hot offer tour package by Travels Mantra',
+    href: '/tours/almaty',
+  },
+  {
+    label: 'Bishkek (Kyrgyzstan)',
+    name: 'Bishkek',
+    country: 'Kyrgyzstan',
+    desc: 'Issyk-Kul lake trips and Tian Shan mountain escapes.',
+    image: '/images/bishkek-kyrgyzstan-tour.webp',
+    alt: 'Bishkek Kyrgyzstan hot offer tour package by Travels Mantra',
+    href: '/tours/bishkek',
+  },
+  {
+    label: 'Georgia (Tbilisi)',
+    name: 'Tbilisi',
+    country: 'Georgia',
+    desc: 'Tbilisi old town, wine country, and mountain scenery tours.',
+    image: '/images/georgia-tour.webp',
+    alt: 'Georgia Tbilisi hot offer tour package by Travels Mantra',
+    href: '/tours/georgia',
+  },
+  {
+    label: 'Kiev (Ukraine)',
+    name: 'Kiev',
+    country: 'Ukraine',
+    desc: 'Golden-domed churches, heritage walks, and city tours.',
+    image: '/images/kiev-ukraine-tour.webp',
+    alt: 'Kiev Ukraine hot offer tour package by Travels Mantra',
+    href: '/tours/kiev',
+  },
+  {
+    label: 'Belarus (Minsk)',
+    name: 'Minsk',
+    country: 'Belarus',
+    desc: 'Soviet-era architecture, parks, and cultural city breaks.',
+    image: '/images/belarus-minsk-tour.webp',
+    alt: 'Belarus Minsk hot offer tour package by Travels Mantra',
+    href: '/tours/belarus',
+  },
+  {
+    label: 'Turkey',
+    name: 'Turkey',
+    country: 'Turkey',
+    desc: 'Istanbul highlights, Cappadocia, and Mediterranean getaways.',
+    image: '/images/turkey-tour.webp',
+    alt: 'Turkey hot offer tour package by Travels Mantra',
+    href: '/tours/turkey',
+  },
+] as const;
+
+export type NavLink =
+  | { href: string; label: string; hot?: false }
+  | { href: string; label: string; hot: true; children: readonly { label: string; href: string }[] };
+
+export const navLinks: NavLink[] = [
   { href: '/tours', label: 'Tours' },
   { href: '/excursions', label: 'Excursions' },
   { href: '/about-us', label: 'About Us' },
-  { href: '/hot-offers', label: 'Hot Offers' },
+  {
+    href: '/hot-offers',
+    label: 'Hot Offers',
+    hot: true,
+    children: hotOfferDestinations.map((d) => ({ label: d.label, href: d.href })),
+  },
   { href: '/visa', label: 'Visa' },
   { href: '/travel-insurance', label: 'Travel Insurance' },
   { href: '/build-your-package', label: 'Build Your Package' },
@@ -60,15 +162,18 @@ export const heroPackages = [
 ] as const;
 
 export const searchDestinations = [
+  'Russia (Moscow)',
+  'Armenia (Yerevan)',
   'Tashkent',
+  'Baku',
+  'Almaty',
+  'Bishkek',
+  'Georgia (Tbilisi)',
+  'Kiev',
+  'Belarus (Minsk)',
+  'Turkey',
   'Samarkand',
   'Bukhara',
-  'Almaty',
-  'Baku',
-  'Bishkek',
-  'Georgia',
-  'Armenia',
-  'Russia',
 ] as const;
 
 export const travelMonthOptions = [
@@ -181,7 +286,7 @@ export const cisDestinations = [
     name: 'Astana',
     country: 'Kazakhstan',
     desc: 'Modern capital skyline and Central Asian architecture.',
-    image: '/images/almaty-kazakhstan-tour.webp',
+    image: '/images/astana-kazakhstan-tour.webp',
     alt: 'Astana Kazakhstan tour package by Travels Mantra',
     href: '/tours/astana',
   },
@@ -205,9 +310,33 @@ export const cisDestinations = [
     name: 'Russia',
     country: 'Russia',
     desc: 'Moscow and St. Petersburg fairy-tale city tours.',
-    image: '/images/tashkent-tour-package.webp',
-    alt: 'Russia tour package by Travels Mantra',
+    image: '/images/moscow-russia-tour.webp',
+    alt: 'Russia Moscow tour package by Travels Mantra',
     href: '/tours/russia',
+  },
+  {
+    name: 'Kiev',
+    country: 'Ukraine',
+    desc: 'Golden-domed churches, heritage walks, and city tours.',
+    image: '/images/kiev-ukraine-tour.webp',
+    alt: 'Kiev Ukraine tour package by Travels Mantra',
+    href: '/tours/kiev',
+  },
+  {
+    name: 'Belarus',
+    country: 'Belarus',
+    desc: 'Minsk city breaks with parks and cultural landmarks.',
+    image: '/images/belarus-minsk-tour.webp',
+    alt: 'Belarus Minsk tour package by Travels Mantra',
+    href: '/tours/belarus',
+  },
+  {
+    name: 'Turkey',
+    country: 'Turkey',
+    desc: 'Istanbul highlights, Cappadocia, and Mediterranean getaways.',
+    image: '/images/turkey-tour.webp',
+    alt: 'Turkey tour package by Travels Mantra',
+    href: '/tours/turkey',
   },
 ];
 
@@ -281,10 +410,40 @@ export const featuredTours = [
     subtitle: 'Russian Fairy Tale Tour',
     duration: '6N / 7D',
     price: 'ON REQUEST',
-    image: '/images/tashkent-tour-package.webp',
+    image: '/images/moscow-russia-tour.webp',
     alt: 'Moscow Russia tour package by Travels Mantra',
     inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
     href: '/tours/russia',
+  },
+  {
+    title: 'Kiev Tour Package',
+    subtitle: 'Ukraine Heritage Tour',
+    duration: '4N / 5D',
+    price: 'ON REQUEST',
+    image: '/images/kiev-ukraine-tour.webp',
+    alt: 'Kiev Ukraine tour package by Travels Mantra',
+    inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
+    href: '/tours/kiev',
+  },
+  {
+    title: 'Belarus Tour Package',
+    subtitle: 'Minsk City Break',
+    duration: '3N / 4D',
+    price: 'ON REQUEST',
+    image: '/images/belarus-minsk-tour.webp',
+    alt: 'Belarus Minsk tour package by Travels Mantra',
+    inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
+    href: '/tours/belarus',
+  },
+  {
+    title: 'Turkey Holiday Package',
+    subtitle: 'Istanbul & Beyond',
+    duration: '5N / 6D',
+    price: 'ON REQUEST',
+    image: '/images/turkey-tour.webp',
+    alt: 'Turkey holiday tour package by Travels Mantra',
+    inclusions: ['Flight', 'Food', 'Visa', 'Sightseeing', 'Travel Guide', 'Transport'],
+    href: '/tours/turkey',
   },
 ];
 
@@ -413,15 +572,18 @@ export const blogPosts = [
 ];
 
 export const enquiryDestinations = [
+  'Russia (Moscow)',
+  'Armenia (Yerevan)',
   'Tashkent',
+  'Baku',
+  'Almaty',
+  'Bishkek',
+  'Georgia (Tbilisi)',
+  'Kiev',
+  'Belarus (Minsk)',
+  'Turkey',
   'Samarkand',
   'Bukhara',
-  'Almaty',
-  'Baku',
-  'Bishkek',
-  'Georgia',
-  'Armenia',
-  'Russia',
   'Other Central Asia',
 ];
 
@@ -447,14 +609,16 @@ export const serviceTabs = [
 ] as const;
 
 export const footerCentralAsia = [
+  { label: 'Russia (Moscow)', href: '/tours/russia' },
+  { label: 'Armenia (Yerevan)', href: '/tours/armenia' },
   { label: 'Tashkent', href: '/tours/tashkent' },
-  { label: 'Samarkand', href: '/tours/samarkand' },
-  { label: 'Bukhara', href: '/tours/bukhara' },
-  { label: 'Almaty', href: '/tours/almaty' },
   { label: 'Baku', href: '/tours/baku' },
+  { label: 'Almaty', href: '/tours/almaty' },
   { label: 'Bishkek', href: '/tours/bishkek' },
-  { label: 'Georgia', href: '/tours/georgia' },
-  { label: 'Armenia', href: '/tours/armenia' },
+  { label: 'Georgia (Tbilisi)', href: '/tours/georgia' },
+  { label: 'Kiev', href: '/tours/kiev' },
+  { label: 'Belarus (Minsk)', href: '/tours/belarus' },
+  { label: 'Turkey', href: '/tours/turkey' },
 ];
 
 export const footerServices = [
@@ -496,6 +660,10 @@ export const destinationCategories = [
   { name: 'Kyrgyzstan', image: '/images/bishkek-kyrgyzstan-tour.webp', alt: 'Kyrgyzstan Central Asia tour destinations' },
   { name: 'Georgia', image: '/images/georgia-tour.webp', alt: 'Georgia Caucasus tour destinations' },
   { name: 'Armenia', image: '/images/armenia-tour.webp', alt: 'Armenia Caucasus tour destinations' },
+  { name: 'Russia', image: '/images/moscow-russia-tour.webp', alt: 'Russia Moscow tour destinations' },
+  { name: 'Ukraine', image: '/images/kiev-ukraine-tour.webp', alt: 'Ukraine Kiev tour destinations' },
+  { name: 'Belarus', image: '/images/belarus-minsk-tour.webp', alt: 'Belarus Minsk tour destinations' },
+  { name: 'Turkey', image: '/images/turkey-tour.webp', alt: 'Turkey tour destinations' },
 ];
 
 export const excursions = [
@@ -543,29 +711,11 @@ export const excursions = [
   },
 ];
 
-export const heroOffers = [
-  {
-    title: 'Tashkent Early Bird',
-    text: 'Save on select 4N/5D Uzbekistan packages',
-    priceNote: 'From ₹35,800',
-    image: '/images/tashkent-uzbekistan-tour.webp',
-    alt: 'Tashkent Uzbekistan early bird offer',
-    href: '/hot-offers',
-  },
-  {
-    title: 'Almaty Fixed Departure',
-    text: 'Weekly departures from Delhi with e-visa support',
-    priceNote: 'From ₹44,500',
-    image: '/images/almaty-kazakhstan-tour.webp',
-    alt: 'Almaty Kazakhstan fixed departure offer',
-    href: '/hot-offers',
-  },
-  {
-    title: 'Baku Holiday Deal',
-    text: 'Flame Towers, Old City & Caspian views',
-    priceNote: 'From ₹48,200',
-    image: '/images/baku-azerbaijan-tour.webp',
-    alt: 'Baku Azerbaijan holiday deal',
-    href: '/hot-offers',
-  },
-];
+export const heroOffers = hotOfferDestinations.map((dest) => ({
+  title: dest.label,
+  text: dest.desc,
+  priceNote: 'Special pricing — enquire now',
+  image: dest.image,
+  alt: dest.alt,
+  href: dest.href,
+}));

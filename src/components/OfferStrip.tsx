@@ -21,7 +21,7 @@ export default function OfferStrip({ variant = 'default' }: OfferStripProps) {
           </h2>
         </div>
         <Link
-          to="/offers"
+          to="/hot-offers"
           className="shrink-0 text-xs sm:text-sm font-semibold text-[#336443] hover:text-[#1f2a1d] border-b border-[#336443]/40 pb-0.5 transition-colors whitespace-nowrap"
         >
           View All Offers

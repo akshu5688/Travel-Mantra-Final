@@ -57,6 +57,21 @@ const images = [
   { file: 'bishkek-kyrgyzstan-tour.webp', url: 'https://images.unsplash.com/photo-1602529359787-ce7468eaf119?w=1200&q=90', w: 1200, h: 900 },
   { file: 'georgia-tour.webp', url: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=90', w: 1200, h: 900 },
   { file: 'armenia-tour.webp', url: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'moscow-russia-tour.webp', url: 'https://images.unsplash.com/photo-1591607508170-4a3e8007f4b4?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'kiev-ukraine-tour.webp', url: 'https://images.unsplash.com/photo-1656701791002-b87bc63fa227?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'belarus-minsk-tour.webp', url: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'turkey-tour.webp', url: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'astana-kazakhstan-tour.webp', url: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1200&q=90', w: 1200, h: 900 },
+  { file: 'delhi-india-tour.webp', url: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&q=90', w: 1200, h: 900 },
+
+  // Hotel property thumbnails by city
+  { file: 'hotel-tashkent.webp', url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-almaty.webp', url: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-baku.webp', url: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-samarkand.webp', url: 'https://images.unsplash.com/photo-1664602078796-68ee76b3fc59?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-bishkek.webp', url: 'https://images.unsplash.com/photo-1602529359787-ce7468eaf119?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-delhi.webp', url: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=90', w: 800, h: 560 },
+  { file: 'hotel-moscow.webp', url: 'https://images.unsplash.com/photo-1513326738677-b964603b66d8?w=1200&q=90', w: 800, h: 560 },
 ];
 
 let saved = 0;
